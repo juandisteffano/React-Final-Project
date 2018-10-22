@@ -1,0 +1,12 @@
+p {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.infoApp{
+    display: block;
+    margin-bottom: 5%;
+}

@@ -1,0 +1,36 @@
+.track{
+    box-sizing: border-box;
+    float: left;
+    padding: 1%;
+    width: 48%;
+    margin: 1%;
+    border: 1px solid black;
+}
+
+.imgTrack{
+    box-sizing: border-box;
+    float: left;
+    width: 30%;
+    padding: 1%;
+}
+
+.infoTrack{
+    box-sizing: border-box;
+    float: right;
+    width: 70%;
+
+}
+
+.title{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.artist{
+    font-size: 0.75rem;
+}
+
+.album{
+    font-size: 0.75rem;
+
+}

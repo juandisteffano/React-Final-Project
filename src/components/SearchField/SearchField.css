@@ -1,0 +1,45 @@
+.search-field{
+    float: right;
+    box-sizing: border-box;
+
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 9999em;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+    overflow: auto;
+   
+    width: 30%;
+    height: 2.2rem;
+
+}
+
+
+.search-field .icon { 
+    position: relative;
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    max-width: 50px;
+    
+
+    background-image: url('../../assets/magnifyingGlass.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 40% 40%;
+
+    height: 100%;
+  }
+
+.search-field .input-field{
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    float: right;
+
+    height: 90%;
+    border: none;
+    background: transparent;
+
+
+}
