@@ -1,4 +1,4 @@
-.track{
+.artist{
     box-sizing: border-box;
     float: left;
     padding: 1%;
@@ -8,34 +8,35 @@
     height: 120px;
 }
 
-.imgTrack{
+.artist:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+.imgArtist{
     box-sizing: border-box;
     float: left;
     width: 30%;
     padding: 1%;
 }
 
-.infoTrack{
+.infoArtist{
     box-sizing: border-box;
     float: right;
     width: 70%;
 
 }
 
-.titleTrack{
-    font-size: 1rem;
+.nameArtist{
+    font-size: 1.5rem;
     font-weight: bold;
-}
-
-.artistTrackName,
-.albumTrackName {
-    font-size: 0.75rem;
+    margin-left: 5%
 }
 
 
 /*Mobile*/
 @media screen and (max-width: 600px){
-    .track{
+    .artist{
         display: block;
         width: 100%;
     }

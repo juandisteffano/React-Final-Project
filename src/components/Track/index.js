@@ -9,14 +9,14 @@ class Track extends Component {
         return (
             <div className="track">
                 <img 
-                    className="imgTrack"
+                    className="imgTrack vertical-center"
                     src={this.props.track.urlCover}
-                    alt={"Album Cover " + this.props.track.album + " from " + this.props.track.artist}
+                    alt={"Front cover of the album " + this.props.track.album + " by " + this.props.track.artist}
                 ></img>
                 <div className="infoTrack">
-                    <p className="title">{this.props.track.name}</p>
-                    <p className="artist">{"Artist: " + this.props.track.artist}</p>
-                    <p className="album">{"Album: " + this.props.track.album}</p>
+                    <p className="titleTrack">{this.props.track.name}</p>
+                    <p className="artistTrackName">{"Artist: " + this.props.track.artist}</p>
+                    <p className="albumTrackName">{"Album: " + this.props.track.album}</p>
                 </div>
             </div>
         )     

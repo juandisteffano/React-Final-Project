@@ -2,37 +2,53 @@ import React, { Component } from 'react';
 
 //CSS
 import './HomeView.css'
-
+//Model
+import TrackModel from '../../Models/TrackModel'
 //Components
 import InfoApp from '../../components/InfoApp'
 import SearchField from '../../components/SearchField'
-import FavoriteSongsList from '../../components/FavoriteSongsList'
+import ListElements from '../../components/ListElements'
+import Track from '../../components/Track'
 
 class HomeView extends Component {
 
     constructor(props){
-        super(props);
+        super(props)
         this.state = {
-            showListFavoriteSongs: true,
+            favoriteSongsList: [ new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046")
+                                ]
         }
     }
+
     render() {
-        if(this.state.showListFavoriteSongs){
+
+        const songs = this.state.favoriteSongsList.map( (song, index) => {
+            return (
+                <Track track={song} key={index}></Track>
+            )
+        })
+        if(this.state.favoriteSongsList.length>0){
             return (
                 <article className="home-view">
-                    Home View
                     <InfoApp></InfoApp>
                     <SearchField
                         placeholder="Type the name of your favorite artist"
                         className="vertical-center horizontal-center"
                     ></SearchField>
-                    <FavoriteSongsList></FavoriteSongsList>
+                    <ListElements
+                        elements={songs}
+                        msj="No Favorite songs"
+                    ></ListElements>
                 </article>
             )
         }else{
             return (
                 <article className="home-view">
-                    Home View
                     <InfoApp></InfoApp>
                     <SearchField
                         placeholder="Type the name of your favorite artist"
