@@ -4,12 +4,22 @@ import React, { Component } from 'react';
 import './FavoriteSongsList.css'
 //Components
 import Track from '../Track'
+//Model
+import TrackModel from '../../Models/TrackModel'
 
 class FavoriteSongsList extends Component {
 
     constructor(props){
         super(props)
         this.state = {
+            favoriteSongsList: [ new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046")
+                                ]
+            /*
             favoriteSongsList: [{
                 "album" : {
                   "album_type" : "album",
@@ -287,10 +297,11 @@ class FavoriteSongsList extends Component {
                 "uri" : "spotify:track:7KtsHby5D21gJbLGH5Jymo"
               },
             ],
+            */
         }
     }
     render() {
-        
+        console.log(new TrackModel("id","name","artist","album","urls"))
         const songs = this.state.favoriteSongsList.map( (song, index) => {
                 return (
                     <Track track={song}></Track>

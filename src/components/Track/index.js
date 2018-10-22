@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 //CSS
 import './Track.css'
 
-//Utils
-import {getUrlAlbumImg, getAltAlbumImg, getArtistName, getAlbumName, getTrackName} from '../../Utils/trackFunctions.js'
-
-
 class Track extends Component {
     
     render() {
@@ -14,13 +10,13 @@ class Track extends Component {
             <div className="track">
                 <img 
                     className="imgTrack"
-                    src={getUrlAlbumImg(this.props.track, 300)}
-                    alt={getAltAlbumImg(this.props.track)}
+                    src={this.props.track.urlCover}
+                    alt={"Album Cover " + this.props.track.album + " from " + this.props.track.artist}
                 ></img>
                 <div className="infoTrack">
-                    <p className="title">{getTrackName(this.props.track)}</p>
-                    <p className="artist">{"Artist: " + getArtistName(this.props.track)}</p>
-                    <p className="album">{"Album: " + getAlbumName(this.props.track)}</p>
+                    <p className="title">{this.props.track.name}</p>
+                    <p className="artist">{"Artist: " + this.props.track.artist}</p>
+                    <p className="album">{"Album: " + this.props.track.album}</p>
                 </div>
             </div>
         )     
