@@ -24,7 +24,7 @@ class ArtistSearchView extends Component {
     render() {
         const artists = this.state.artistsSearchList.map( (artist, index) => {
             return (
-                <Artist artist={artist} key={index}></Artist>
+                <Artist artist={artist} key={index} onlyInfo={false}></Artist>
             )
         })
         return(

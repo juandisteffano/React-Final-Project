@@ -8,28 +8,44 @@
     height: 120px;
 }
 
+
+
 .imgTrack{
     box-sizing: border-box;
     float: left;
     width: 30%;
     padding: 1%;
+    max-width: 120px;
 }
 
 .infoTrack{
     box-sizing: border-box;
-    float: right;
-    width: 70%;
+    float: left;
+    width: 60%;
 
 }
 
 .titleTrack{
     font-size: 1rem;
     font-weight: bold;
+    clear: both;
 }
 
 .artistTrackName,
 .albumTrackName {
     font-size: 0.75rem;
+    clear: both;
+}
+
+
+.iconStarSelected{
+    float: right;
+    width: 8%;
+
+}
+
+.iconStarSelected:hover{
+    width: 10%;
 }
 
 

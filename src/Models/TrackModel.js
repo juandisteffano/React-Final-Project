@@ -1,9 +1,10 @@
 export default class TrackModel {
-    constructor(id, name, artist, album, urlCover){
+    constructor(id, name, artist, album, albumDiscNumber, urlCover){
         this.id = id;
         this.name = name;
         this.artist = artist;
         this.album = album;
+        this.albumDiscNumber = albumDiscNumber;
         this.urlCover = urlCover;
     }
 
@@ -33,6 +34,13 @@ export default class TrackModel {
     }
     set album(newAlbum){
         this._album = newAlbum;
+    }
+
+    get albumDiscNumber(){
+      return this._albumDiscNumber;
+    }
+    set albumDiscNumber(newAlbumDiscNumber){
+      this._albumDiscNumber = newAlbumDiscNumber;
     }
 
     get urlCover(){

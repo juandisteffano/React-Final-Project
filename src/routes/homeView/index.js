@@ -15,12 +15,12 @@ class HomeView extends Component {
     constructor(props){
         super(props)
         this.state = {
-            favoriteSongsList: [ new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046")
+            favoriteSongsList: [ new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("3SuDVRoeAU00LbpCeMgxGx", "D'You Know What I Mean?", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
+                                  new TrackModel("7KtsHby5D21gJbLGH5Jymo", "My Big Mouth", "Oasis", "Be Here Now", 1, "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046")
                                 ]
         }
     }

@@ -1,0 +1,20 @@
+.trackAlbumList{
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow: auto;
+}
+
+.titleTrack{
+    font-size: 0.75rem;
+    float: left;
+}
+
+.favAddImg{
+    float: right;
+    height: 35px;
+}
+
+.favAddImg:hover{
+    zoom: 1.2;
+}

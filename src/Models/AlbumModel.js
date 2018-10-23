@@ -9,7 +9,7 @@ export default class Album {
     }
 
     get id(){
-        return this_.id;
+        return this._id;
     }
     set id(newId){
         this._id = newId;
