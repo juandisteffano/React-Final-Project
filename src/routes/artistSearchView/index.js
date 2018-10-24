@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 //CSS
 import './ArtistSearchView.css'
@@ -7,45 +8,60 @@ import './ArtistSearchView.css'
 import SearchField from '../../components/SearchField'
 import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
-//Model
-import ArtistModel from '../../Models/ArtistModel'
+
+//Api
+import {searchArtists} from '../../api/api'
 
 class ArtistSearchView extends Component {
     constructor(props){
         super(props)
         this.state = {
-            artistsSearchList: [ new ArtistModel("3SuDVRoeAU00LbpCeMgxGx", "Oasis", "Rock", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                new ArtistModel("3SuDVRoeAU00LbpCeMgxGx", "Oasis2", "Rock", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
-                                new ArtistModel("3SuDVRoeAU00LbpCeMgxGx", "Oasis3", "Rock", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046")
-                           
-                                ]
+            artistsSearchList: []
         }
     }
     render() {
         const artists = this.state.artistsSearchList.map( (artist, index) => {
             return (
-                <Artist artist={artist} key={index} onlyInfo={false}></Artist>
+                <Artist artist={artist} key={index} onlyInfo={false} />
             )
         })
+
         return(
             <article className="artistSearchView">
                 <div className="infoArtistSearchView">
                     <h2>Artists</h2>
-                    <h3>You are currently searching: "PONER PARAMS"</h3>
+                    <h3>You are currently searching: "{this.props.match.params.searchkey}"</h3>
                 </div>
                 <SearchField
                     placeholder="Search for your favorite artist here"
                     className="vertical-center horizontal-center"
-                ></SearchField>
-                ----PATH---
+                />
+                
+                <div className="pathNav">
+                    <Link to="/">Home</Link> -> 
+                    <Link to={"/search/" + this.props.match.params.searchkey}>Artist</Link>
+                </div>
+                
                 <ListElements
                     elements={artists}
                     msj="No Favorite songs"
-                ></ListElements>
+                />
 
             </article>
         )
     }
+
+    componentDidMount(){
+        try{
+            searchArtists("Ciro")
+            .then(
+                (data) => {this.setState({artistsSearchList: data})}
+                )
+        }catch(err){
+            console.log("Error: "+ err)
+        }
+    }
+
 }
 
 export default ArtistSearchView;

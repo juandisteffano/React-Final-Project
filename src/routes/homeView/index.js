@@ -10,6 +10,7 @@ import SearchField from '../../components/SearchField'
 import ListElements from '../../components/ListElements'
 import Track from '../../components/Track'
 
+
 class HomeView extends Component {
 
     constructor(props){
@@ -25,39 +26,40 @@ class HomeView extends Component {
         }
     }
 
+     
+
     render() {
 
         const songs = this.state.favoriteSongsList.map( (song, index) => {
             return (
-                <Track track={song} key={index}></Track>
+                <Track track={song} key={index} />
             )
         })
-        if(this.state.favoriteSongsList.length>0){
+   
             return (
                 <article className="home-view">
-                    <InfoApp></InfoApp>
+                    <InfoApp />
                     <SearchField
                         placeholder="Type the name of your favorite artist"
-                        className="vertical-center horizontal-center"
-                    ></SearchField>
-                    <ListElements
-                        elements={songs}
-                        msj="No Favorite songs"
-                    ></ListElements>
+                        className="vertical-center horizontal-center" 
+                    />
+                    { 
+                        this.state.favoriteSongsList.length > 0 &&
+                        <ListElements
+                            elements={songs}
+                            msj="No Favorite songs" 
+                        /> 
+                    }
                 </article>
             )
-        }else{
-            return (
-                <article className="home-view">
-                    <InfoApp></InfoApp>
-                    <SearchField
-                        placeholder="Type the name of your favorite artist"
-                        className="vertical-center horizontal-center"
-                    ></SearchField>
-                </article>
-            )
-        }
+      
     }
+
+    
+
+    
+    
+
 }
 
 export default HomeView;

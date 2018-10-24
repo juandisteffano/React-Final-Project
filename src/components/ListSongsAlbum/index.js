@@ -23,7 +23,7 @@ class ListSongsAlbum extends Component {
                     album={album}
                     discNumber={index}
                     key={index}
-                ></AlbumDisc>
+                />
            )
         })
 

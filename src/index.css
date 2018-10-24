@@ -30,3 +30,11 @@ html{
     top: 50%;
     transform: translate(0, -50%)
 }
+
+.pathNav{
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    float: none;
+    margin-left: 1%;
+}

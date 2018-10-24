@@ -3,7 +3,7 @@
     float: left;
     padding: 1%;
     width: 48%;
-    margin: 1%;
+    margin-bottom: 1%;
     border: 1px solid black;
     height: 120px;
 }
@@ -14,7 +14,7 @@
     display: block;
     padding: 1%;
     width: auto;
-    margin: 1%;
+    margin-bottom: 1%;
     border: 1px solid black;
     height: 200px;
 }
@@ -28,16 +28,14 @@
     box-sizing: border-box;
     float: left;
     width: 30%;
-    max-width: 120px;
-    padding: 1%;
+    max-width: 110px;
 }
 
 .imgArtistInfo{
     box-sizing: border-box;
     float: left;
     width: 30%;
-    max-width: 200px;
-    padding: 1%;
+    max-width: 190px;
 }
 
 .infoArtist{

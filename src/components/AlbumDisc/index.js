@@ -8,7 +8,7 @@ import TrackAlbumList from '../../components/TrackAlbumList'
 class AlbumDisc extends Component {
     render() {
         const tracks = this.props.album.map( (song, index) => {
-            return <TrackAlbumList track={song} key={index} onlyInfo={false}></TrackAlbumList>
+            return <TrackAlbumList track={song} key={index} onlyInfo={false}/>
         })
 
         return (

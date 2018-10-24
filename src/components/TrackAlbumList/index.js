@@ -14,31 +14,27 @@ class TrackAlbumList extends Component {
         }
     }
     render() {
-        if(this.state.isSelected){
-            return (
+        return (  
+            
                 <div className="trackAlbumList">
-                    <p className="titleTrack">{this.props.track.name}</p>
+                <p className="titleTrack">{this.props.track.name}</p>
+                {
+                this.state.isSelected ?
                     <img 
                         className="favAddImg"
                         src={starSelected}
                         alt="Delete from favorite"
-                    >
-                    </img>
-                </div>
-            ) 
-        }else{
-            return (
-                <div className="trackAlbumList">
-                    <p className="titleTrack">{this.props.track.name}</p>
+                    />
+                :
                     <img 
                         className="favAddImg"
                         src={star}
                         alt="Add to favorite"
-                    >
-                    </img>
+                    />
+                }
                 </div>
-            )    
-        } 
+        )
+            
     }
 }
 

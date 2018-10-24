@@ -13,7 +13,7 @@ class Album extends Component {
                         className="imgAlbumInfo vertical-center"
                         src={this.props.album.urlCover}
                         alt={"Logo " + this.props.album.name}
-                    ></img>
+                    />
                     <div className="infoAlbum vertical-center">
                         <p className="nameAlbum">{this.props.album.name}</p>
                         <p className="artistAlbum">{this.props.album.artist +" - " + this.props.album.year}</p>
@@ -27,7 +27,7 @@ class Album extends Component {
                         className="imgAlbum vertical-center"
                         src={this.props.album.urlCover}
                         alt={"Logo " + this.props.album.name}
-                    ></img>
+                    />
                     <div className="infoAlbum vertical-center">
                         <p className="nameAlbum">{this.props.album.name}</p>
                         <p className="yearAlbum">{this.props.album.year}</p>

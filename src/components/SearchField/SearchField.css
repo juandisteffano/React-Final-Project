@@ -35,11 +35,13 @@
     position: relative;
     box-sizing: border-box;
     width: 90%;
-    float: right;
+    float: none;
 
     height: 90%;
     border: none;
     background: transparent;
+
+
 
 
 }

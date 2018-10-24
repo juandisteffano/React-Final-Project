@@ -14,7 +14,7 @@ class Track extends Component {
                     className="imgTrack vertical-center"
                     src={this.props.track.urlCover}
                     alt={"Front cover of the album " + this.props.track.album + " by " + this.props.track.artist}
-                ></img>
+                />
                 <div className="infoTrack vertical-center">
                     <p className="titleTrack">{this.props.track.name}</p>
                     <p className="artistTrackName">{"Artist: " + this.props.track.artist}</p>
@@ -25,7 +25,7 @@ class Track extends Component {
                     src={starSelected}
                     alt={"Delete from favorites"}
                     onClick={()=>alert("Eliminar")}
-                ></img>
+                />
             </div>
         )     
     }

@@ -1,8 +1,9 @@
 export default class Album {
-    constructor(id, name, artist, year, urlCover){
+    constructor(id, name, artist, artistId, year, urlCover){
         this.id = id;
         this.name = name;
         this.artist = artist;
+        this.artistId = artistId;
         this.year = year;
         this.urlCover = urlCover;
         this.tracks = [];
@@ -27,6 +28,13 @@ export default class Album {
     }
     set artist(newArtist){
         this._artist = newArtist;
+    }
+
+    get artistId(){
+        return this._artistId;
+    }
+    set artistId(newArtistId){
+        this._artistId = newArtistId;
     }
 
     get year(){

@@ -23,11 +23,15 @@ class Header extends Component {
                 <header className="header">
                     <img src={logo} 
                         alt="Logo" 
-                        className="logo-header vertical-center"></img>
-                    <SearchField 
-                        placeholder="Search for another artist"
-                        className="vertical-center"
-                    ></SearchField>
+                        className="logo-header vertical-center"
+                    />
+                    {
+                        this.state.showSearchField &&
+                        <SearchField 
+                            placeholder="Search for another artist"
+                            className="vertical-center"
+                        />
+                    }
                 </header>
             )
         }else{
