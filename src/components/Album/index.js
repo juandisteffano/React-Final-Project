@@ -4,6 +4,10 @@ import React, { Component } from 'react';
 import './Album.css'
 
 class Album extends Component {
+    constructor(props){
+        super(props);
+        this.onClickHandler = this.onClickHandler.bind(this);
+    }
     
     render() {
         if(this.props.onlyInfo){
@@ -22,7 +26,7 @@ class Album extends Component {
             )
         }else{
             return (
-                <div className="album" onClick={() => alert(this.props.album.name)}>
+                <div className="album" onClick={this.onClickHandler}>
                     <img 
                         className="imgAlbum vertical-center"
                         src={this.props.album.urlCover}
@@ -35,6 +39,11 @@ class Album extends Component {
                 </div>
             ) 
         }    
+    }
+
+    onClickHandler(){
+        window.location.href = "/album/" + this.props.album.id;
+
     }
 }
 

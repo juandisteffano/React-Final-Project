@@ -13,7 +13,7 @@ class AlbumDisc extends Component {
 
         return (
             <div className="albumDisc">
-                <h2 className="albumDiscTitle">{"CD " + this.props.discNumber}</h2>
+                <p className="albumDiscTitle">{"CD " + this.props.discNumber}</p>
                 <div className="tracksList">
                     {tracks}
                 </div>

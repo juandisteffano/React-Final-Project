@@ -1,20 +1,32 @@
 .trackAlbumList{
+    box-sizing: border-box;
     display: block;
     width: 100%;
     clear: both;
     overflow: auto;
 }
 
-.titleTrack{
-    font-size: 0.75rem;
+.titleTrackAlbumList{
+    box-sizing: border-box;
+    font-size: 1rem;
     float: left;
+    margin-left: 2%;
 }
 
-.favAddImg{
+.favImg{
+    box-sizing: border-box;
     float: right;
-    height: 35px;
+    margin-right: 2%;
+    height: 30px;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(30%);
 }
 
-.favAddImg:hover{
+.favImg:hover{
     zoom: 1.2;
 }
+
+.trackAlbumList:nth-child(odd) {background: #CCC}
+.trackAlbumList:nth-child(even) {background: #FFF}

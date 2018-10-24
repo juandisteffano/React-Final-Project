@@ -9,8 +9,8 @@ import SearchField from '../../components/SearchField'
 import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
 
-//Api
-import {searchArtists} from '../../api/api'
+//Util
+import { searchArtists } from '../../Utils/parserModel'
 
 class ArtistSearchView extends Component {
     constructor(props){
@@ -52,14 +52,11 @@ class ArtistSearchView extends Component {
     }
 
     componentDidMount(){
-        try{
-            searchArtists("Ciro")
+        searchArtists(this.props.match.params.searchkey)
             .then(
                 (data) => {this.setState({artistsSearchList: data})}
                 )
-        }catch(err){
-            console.log("Error: "+ err)
-        }
+            .catch(error => console.error(error)) 
     }
 
 }

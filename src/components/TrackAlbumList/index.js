@@ -17,19 +17,21 @@ class TrackAlbumList extends Component {
         return (  
             
                 <div className="trackAlbumList">
-                <p className="titleTrack">{this.props.track.name}</p>
+                <p className="titleTrackAlbumList">{this.props.track.name}</p>
                 {
                 this.state.isSelected ?
                     <img 
-                        className="favAddImg"
+                        className="favImg"
                         src={starSelected}
                         alt="Delete from favorite"
+                        onClick={()=>{alert("delete")}}
                     />
                 :
                     <img 
-                        className="favAddImg"
+                        className="favImg"
                         src={star}
                         alt="Add to favorite"
+                        onClick={()=>{alert("add")}}
                     />
                 }
                 </div>
