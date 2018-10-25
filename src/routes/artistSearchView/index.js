@@ -10,7 +10,7 @@ import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
 
 //Util
-import { searchArtists } from '../../Utils/parserModel'
+import { searchArtists } from '../../Utils/parser'
 
 class ArtistSearchView extends Component {
     constructor(props){
@@ -44,7 +44,7 @@ class ArtistSearchView extends Component {
                 
                 <ListElements
                     elements={artists}
-                    msj="No Favorite songs"
+                    msj="No Results Found"
                 />
 
             </article>

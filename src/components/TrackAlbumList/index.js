@@ -1,43 +1,28 @@
 import React, { Component } from 'react';
 
-//Icon
-import star from '../../assets/star.png';
-import starSelected from '../../assets/starSelected.png';
 //CSS
 import './TrackAlbumList.css'
 
-class TrackAlbumList extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            isSelected : false,
-        }
-    }
+//Components
+import FavIcon from '../../components/FavIcon'
+
+
+export default class TrackAlbumList extends Component {
     render() {
         return (  
             
                 <div className="trackAlbumList">
-                <p className="titleTrackAlbumList">{this.props.track.name}</p>
-                {
-                this.state.isSelected ?
-                    <img 
-                        className="favImg"
-                        src={starSelected}
-                        alt="Delete from favorite"
-                        onClick={()=>{alert("delete")}}
+                    <p className="titleTrackAlbumList">{this.props.track.trackNumber + " - " + this.props.track.name}</p>
+                    <FavIcon
+                        track={this.props.track}
                     />
-                :
-                    <img 
-                        className="favImg"
-                        src={star}
-                        alt="Add to favorite"
-                        onClick={()=>{alert("add")}}
-                    />
-                }
                 </div>
         )
             
     }
 }
 
-export default TrackAlbumList;
+
+
+
+

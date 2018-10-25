@@ -1,8 +1,8 @@
 export default class ArtistModel {
-    constructor(id, name, genere, urlCover){
+    constructor(id, name, genres, urlCover){
         this.id = id;
         this.name = name;
-        this.genere = genere;
+        this.genres = [];
         this.urlCover = urlCover;
         this.albums = [];
     }
@@ -22,10 +22,13 @@ export default class ArtistModel {
     }
 
     get genere(){
-        return this._genere;
+        return this._genres;
     }
-    set genere(newGenere){
-        this._genere = newGenere;
+    set genere(newGenres){
+        this._genres = newGenres;
+    }
+    addGenres(genres){
+        this._genres.push(genres);
     }
 
     get urlCover(){

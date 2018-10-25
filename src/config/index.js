@@ -1,5 +1,4 @@
-const ACCESS_TOKEN = "BQD6fzRgmMjJDIwLWwAd7HpPApz3Gr4RA53gqMqzesnUDKK41Zesf4DGaQcO8KtxwHK5v7rd3SVItGeMXz0RMpnQ5nj_r48s5EpoNGKtz57Fk2Ra3te59hVvnhTPh6fUpd1nInZ0j7jasmShLJUcDOxiB6vMtyUa"
-
+const ACCESS_TOKEN = "BQA0AybBadmJjLx33BEEfwxXpUsA_usn0K2k8TnGnXgZowGx29D0zmfpS0TzoUguGxpexa-RubFCw2oIZyRh6x_26y92DSG54Bxo2rYoURjkSv7MljBp3l9wz58zornyAyZlHOvKequjWzX-xkUY-tk4fKAyy19n"
 
 export default {
     baseUrl : "https://api.spotify.com/v1/",

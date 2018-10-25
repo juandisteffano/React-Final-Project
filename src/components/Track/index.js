@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 //CSS
 import './Track.css'
-//Icon
-import starSelected from '../../assets/starSelected.png';
+
+//Components
+import FavIcon from '../../components/FavIcon'
 
 class Track extends Component {
     
@@ -20,11 +21,8 @@ class Track extends Component {
                     <p className="artistTrackName">{"Artist: " + this.props.track.artist}</p>
                     <p className="albumTrackName">{"Album: " + this.props.track.album}</p>
                 </div>
-                <img 
-                    className="iconStarSelected"
-                    src={starSelected}
-                    alt={"Delete from favorites"}
-                    onClick={()=>alert("Eliminar")}
+                <FavIcon
+                    track={this.props.track}
                 />
             </div>
         )     

@@ -9,17 +9,23 @@ function fetchSearchArtists(artist){
 
 
 function fetchArtist(idArtist){
-    const url = config.baseUrl + "/artist/" + idArtist; 
+    const url = config.baseUrl + "artists/" + idArtist; 
+    return fetchData(url); 
+}
+
+
+function fetchArtistAlbums(idArtist){
+    const url = config.baseUrl + "artists/" + idArtist + "/albums?include_groups=single%2Calbum&market=ES&limit=25"; 
     return fetchData(url); 
 }
 
 function fetchAlbum(idAlbum){
-    const url = config.baseUrl + "/albums/" + idAlbum; 
+    const url = config.baseUrl + "albums/" + idAlbum; 
     return fetchData(url); 
 }
 
 function fetchAlbumTracks(idAlbum){
-    const url = config.baseUrl + "/albums/" + idAlbum + "/tracks"; 
+    const url = config.baseUrl + "albums/" + idAlbum + "/tracks"; 
     return fetchData(url); 
 }
 
@@ -31,4 +37,4 @@ function fetchData(url){
     .catch(error => console.error(error)) 
 }
 
-export { fetchSearchArtists, fetchArtist , fetchAlbum , fetchAlbumTracks}
+export { fetchSearchArtists, fetchArtist , fetchArtistAlbums, fetchAlbum , fetchAlbumTracks}
