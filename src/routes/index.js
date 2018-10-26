@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 
 //Views
 import HomeView from './homeView';
-import AboutView from './aboutView';
 import ArtistSearchView from './artistSearchView';
 import ArtistView from './artistView';
 import AlbumView from './albumView';
@@ -20,8 +19,6 @@ const getRoutes = function() {
             
             <Switch>
                 <Route exact path="/" component={HomeView} />
-                <Route path="/about" component={AboutView} />
-
                 <Route path="/search/:searchkey" component={ArtistSearchView} />
                 <Route path="/artist/:idartist" component={ArtistView} />
                 <Route path="/album/:idalbum" component={AlbumView} />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //Logo
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/spotifyLogo.png';
 
 //CSS
 import './Header.css'
@@ -9,24 +9,33 @@ import './Header.css'
 //Components
 import SearchField from '../SearchField'
 
-class Header extends Component {
+//Redux
+import { connect } from 'react-redux';
 
-    constructor(props){
-        super(props)
-        this.state = {
-            showSearchField: true,
-        }
-    }
+export class Header extends Component {
+
     render() {
-        if(this.state.showSearchField){
             return (
                 <header className="header">
-                    <img src={logo} 
-                        alt="Logo" 
-                        className="logo-header vertical-center"
-                    />
                     {
-                        this.state.showSearchField &&
+                        this.props.showSearchInHeader ?
+                            <a href="/">
+                                <img src={logo} 
+                                    alt="Logo" 
+                                    className="logo-header vertical-center"
+                                    href="/"
+                                />
+                            </a>
+                            :
+                            <a href="/">
+                                <img src={logo} 
+                                    alt="Logo" 
+                                    className="logo-header horizontal-center vertical-center"
+                                ></img>
+                            </a>
+                    }
+                    {
+                        this.props.showSearchInHeader &&
                         <SearchField 
                             placeholder="Search for another artist"
                             className="vertical-center"
@@ -34,17 +43,15 @@ class Header extends Component {
                     }
                 </header>
             )
-        }else{
-            return (
-                <header className="header">
-                    <img src={logo} 
-                        alt="Logo" 
-                        className="logo-header horizontal-center vertical-center"
-                    ></img>
-                </header>
-            );
-        }
     }
 }
 
-export default Header;
+
+const mapStateToProps = state => {
+    return {
+        showSearchInHeader: state.showSearchInHeader
+    };
+}
+
+
+export default connect(mapStateToProps,null)(Header);

@@ -40,21 +40,27 @@ export class HomeView extends Component {
       
     }
 
-    
-
-    
-    
-
+    componentDidMount(){
+        this.props.showSearchInHeader(false)
+    }
 }
-
-
 
 const mapStateToProps = state => {
     return {
-        favoriteSongsList: state.favoriteSongsList,
+        favoriteSongsList: state.favoriteSongsList
     };
 }
 
+const mapDispatchToProps = dispatch => {
+    return{
+        showSearchInHeader(showSearchInHeader){
+            const action = {
+                type: "SHOW_SEARCH_IN_HEADER",
+                showSearchInHeader
+            }
+            dispatch(action);
+        },
+    }
+}
 
-
-export default connect(mapStateToProps,null)(HomeView);
+export default connect(mapStateToProps,mapDispatchToProps)(HomeView);

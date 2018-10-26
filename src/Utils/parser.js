@@ -47,7 +47,7 @@ function getAlbum(idAlbum){
             
             const tracks = await fetchAlbumTracks(idAlbum);
             tracks.items.forEach(e => {
-                album.addTrack(new TrackModel(e.id, e.name, e.artists[0].name, album.name, e.disc_number, e.track_number, album.urlCover))
+                album.addTrack(new TrackModel(e.id, e.name, e.artists[0].name, album.name, e.disc_number, e.track_number, album.urlCover, e.duration_ms, e.preview_url))
                 });
             
             return album

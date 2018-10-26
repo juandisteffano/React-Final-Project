@@ -6,23 +6,27 @@ import './Track.css'
 //Components
 import FavIcon from '../../components/FavIcon'
 
+//Model
+import { parseToTrackModel } from '../../Models/TrackModel'
+
 class Track extends Component {
     
     render() {
+        const trackModel = parseToTrackModel(this.props.track);
         return (
             <div className="track">
                 <img 
                     className="imgTrack vertical-center"
-                    src={this.props.track.urlCover}
-                    alt={"Front cover of the album " + this.props.track.album + " by " + this.props.track.artist}
+                    src={trackModel.urlCover}
+                    alt={"Front cover of the album " + trackModel.album + " by " + trackModel.artist}
                 />
                 <div className="infoTrack vertical-center">
-                    <p className="titleTrack">{this.props.track.name}</p>
-                    <p className="artistTrackName">{"Artist: " + this.props.track.artist}</p>
-                    <p className="albumTrackName">{"Album: " + this.props.track.album}</p>
+                    <p className="titleTrack">{trackModel.name}</p>
+                    <p className="artistTrackName">{"Artist: " + trackModel.artist}</p>
+                    <p className="albumTrackName">{"Album: " + trackModel.album}</p>
                 </div>
                 <FavIcon
-                    track={this.props.track}
+                    track={trackModel}
                 />
             </div>
         )     

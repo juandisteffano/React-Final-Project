@@ -13,16 +13,18 @@ export default class TrackAlbumList extends Component {
             
                 <div className="trackAlbumList">
                     <p className="titleTrackAlbumList">{this.props.track.trackNumber + " - " + this.props.track.name}</p>
+                    
                     <FavIcon
                         track={this.props.track}
                     />
+                    { 
+                        this.props.track.urlPreviewAudio &&
+                        <audio controls className="audioControls horizontal-center">
+                            <source src={this.props.track.urlPreviewAudio} type="audio/mpeg" />
+                        </audio>
+                    }
                 </div>
         )
             
     }
 }
-
-
-
-
-

@@ -6,6 +6,8 @@ import starSelected from '../../assets/starSelected.png';
 //CSS
 import './FavIcon.css'
 
+//Model
+import { parseToTrackModel } from '../../Models/TrackModel'
 
 //Redux
 import { connect } from 'react-redux';
@@ -13,22 +15,23 @@ import { connect } from 'react-redux';
 
 export class FavIcon extends Component {
     render() {
+        const trackModel = parseToTrackModel(this.props.track);
         return ( 
             <div className="favIcon">
                 {
-                this.isFavoriteSong(this.props.track, this.props.favoriteSongsList) ?
+                this.isFavoriteSong(trackModel, this.props.favoriteSongsList) ?
                     <img 
                         className="favImg"
                         src={starSelected}
                         alt="Delete from favorite"
-                        onClick={() => this.props.handleDeleteClick(this.props.track)}
+                        onClick={() => this.props.handleDeleteClick(trackModel)}
                     />
                 :
                     <img 
                         className="favImg"
                         src={star}
                         alt="Add to favorite"
-                        onClick={() => this.props.handleAddClick(this.props.track)}
+                        onClick={() => this.props.handleAddClick(trackModel)}
                     />
                 }
             </div>
@@ -38,7 +41,8 @@ export class FavIcon extends Component {
     isFavoriteSong(song, list){
         let isFavorite = false;
         list.forEach((elem) => {
-            if(elem.id === song.id)
+            const trackModel = parseToTrackModel(elem);
+            if(trackModel.id === song.id)
                 isFavorite = true;
         })
         return isFavorite;
@@ -53,22 +57,22 @@ const mapStateToProps = state => {
 }
   
 const mapDispatchToProps = dispatch => {
-return{
-    handleAddClick(song){
-        const action = {
-            type: "ADD_SONG",
-            song
-        }
-        dispatch(action);
-    },
-    handleDeleteClick(song){
-        const action = {
-            type: "DELETE_SONG",
-            song
-        }
-        dispatch(action);
-    },
-}
+    return{
+        handleAddClick(song){
+            const action = {
+                type: "ADD_SONG",
+                song
+            }
+            dispatch(action);
+        },
+        handleDeleteClick(song){
+            const action = {
+                type: "DELETE_SONG",
+                song
+            }
+            dispatch(action);
+        },
+    }
 }
 
 

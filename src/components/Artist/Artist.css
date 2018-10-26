@@ -3,9 +3,11 @@
     float: left;
     padding: 1%;
     width: 48%;
-    margin-bottom: 1%;
+    margin: 1%;
     border: 1px solid black;
     height: 120px;
+    background-color: beige;
+    box-shadow: inset 1px 1px 50px #000;
 }
 
 
@@ -17,6 +19,8 @@
     margin-bottom: 1%;
     border: 1px solid black;
     height: 200px;
+    background-color: rgba(186, 206, 190, 0.473);
+    box-shadow: inset 1px 1px 50px #000;
 }
 
 .artist:hover {

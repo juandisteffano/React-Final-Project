@@ -15,8 +15,10 @@ import ListSongsAlbum from '../../components/ListSongsAlbum'
 //Util
 import { getAlbum } from '../../Utils/parser'
 
+//Redux
+import { connect } from 'react-redux';
 
-class AlbumView extends Component {
+export class AlbumView extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -53,6 +55,7 @@ class AlbumView extends Component {
     }
 
     componentDidMount(){
+        this.props.showSearchInHeader(true);
         getAlbum(this.props.match.params.idalbum)
             .then(
                 (data) => {this.setState({album: data})}
@@ -61,11 +64,26 @@ class AlbumView extends Component {
     }
 }
 
-export default AlbumView;
 
-/*
-<ListElements
-elements={songs}
-msj="No Albums"
-></ListElements>
-*/
+//SACAR SI ES SOLO SHOW
+const mapStateToProps = state => {
+    return {
+        showSearchInHeader: state.showSearchInHeader
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+        showSearchInHeader(showSearchInHeader){
+            const action = {
+                type: "SHOW_SEARCH_IN_HEADER",
+                showSearchInHeader
+            }
+            dispatch(action);
+        },
+    }
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(AlbumView);

@@ -1,5 +1,5 @@
 export default class TrackModel {
-    constructor(id, name, artist, album, albumDiscNumber, trackNumber, urlCover){
+    constructor(id, name, artist, album, albumDiscNumber, trackNumber, urlCover, duration, urlPreviewAudio){
         this.id = id;
         this.name = name;
         this.artist = artist;
@@ -7,6 +7,8 @@ export default class TrackModel {
         this.albumDiscNumber = albumDiscNumber;
         this.trackNumber = trackNumber;
         this.urlCover = urlCover;
+        this.duration = duration;
+        this.urlPreviewAudio = urlPreviewAudio;
     }
 
     get id(){
@@ -57,8 +59,28 @@ export default class TrackModel {
     set urlCover(newUrlCover){
         this._urlCover = newUrlCover;
     }
+
+    get duration(){
+      return this._duration;
+    }
+    set duration(newDuration){
+        this._duration = newDuration;
+    }
+
+    get urlPreviewAudio(){
+      return this._urlPreviewAudio;
+    }
+    set urlPreviewAudio(newUrlPreviewAudio){
+        this._urlPreviewAudio = newUrlPreviewAudio;
+    }
+    
 }
 
+export function parseToTrackModel(object){
+  let trackModel = new TrackModel();
+  Object.assign(trackModel, object)
+  return trackModel;
+}
 
 
 

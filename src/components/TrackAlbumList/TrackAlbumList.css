@@ -17,3 +17,10 @@
 
 .trackAlbumList:nth-child(odd) {background: #CCC}
 .trackAlbumList:nth-child(even) {background: #FFF}
+
+
+.audioControls{
+    display: block;
+    clear: both;
+    margin-bottom: 1%;
+}

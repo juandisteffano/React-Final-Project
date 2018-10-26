@@ -12,7 +12,11 @@ import Artist from '../../components/Artist'
 //Util
 import { searchArtists } from '../../Utils/parser'
 
-class ArtistSearchView extends Component {
+//Redux
+import { connect } from 'react-redux';
+
+
+export class ArtistSearchView extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -52,13 +56,36 @@ class ArtistSearchView extends Component {
     }
 
     componentDidMount(){
+        this.props.showSearchInHeader(false);
         searchArtists(this.props.match.params.searchkey)
             .then(
                 (data) => {this.setState({artistsSearchList: data})}
                 )
             .catch(error => console.error(error)) 
     }
+  
 
 }
 
-export default ArtistSearchView;
+//SACAR SI ES SOLO SHOW
+const mapStateToProps = state => {
+    return {
+        showSearchInHeader: state.showSearchInHeader
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+        showSearchInHeader(showSearchInHeader){
+            const action = {
+                type: "SHOW_SEARCH_IN_HEADER",
+                showSearchInHeader
+            }
+            dispatch(action);
+        },
+    }
+}
+
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ArtistSearchView);

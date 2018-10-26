@@ -16,7 +16,10 @@ import Album from '../../components/Album'
 //Util
 import { getArtist } from '../../Utils/parser'
 
-class ArtistView extends Component {
+//Redux
+import { connect } from 'react-redux';
+
+export class ArtistView extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -62,12 +65,34 @@ class ArtistView extends Component {
     }
     
     componentDidMount(){
+        this.props.showSearchInHeader(true);
         getArtist(this.props.match.params.idartist)
             .then(
                 (data) => {this.setState({artist: data})}
                 )
             .catch(error => console.error(error)) 
+        
     }
 }
 
-export default ArtistView;
+//SACAR SI ES SOLO SHOW
+const mapStateToProps = state => {
+    return {
+        showSearchInHeader: state.showSearchInHeader
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return{
+        showSearchInHeader(showSearchInHeader){
+            const action = {
+                type: "SHOW_SEARCH_IN_HEADER",
+                showSearchInHeader
+            }
+            dispatch(action);
+        },
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(ArtistView);
