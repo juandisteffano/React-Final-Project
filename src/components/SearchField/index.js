@@ -11,7 +11,7 @@ class SearchField extends Component {
     }
     render() {
         return (
-            <div className={"search-field " + this.props.className}>
+            <div className={"search-field " + this.props.className} >
                 <span className="icon"/>
                 <input
                     placeholder={this.props.placeholder}

@@ -10,23 +10,25 @@ class Album extends Component {
     }
     
     render() {
-        if(this.props.onlyInfo){
-            return(
-                <div className="albumOnlyInfo">{this.props.className}
-                    <img 
-                        className="imgAlbumInfo vertical-center"
-                        src={this.props.album.urlCover}
-                        alt={"Logo " + this.props.album.name}
-                    />
-                    <div className="infoAlbum vertical-center">
-                        <p className="nameAlbum">{this.props.album.name}</p>
-                        
-                        <p className="artistAlbum">{this.props.album.artist +" - " + this.props.album.year}</p>
+        return(
+            <div>
+            {
+                this.props.onlyInfo &&
+                    <div className="albumOnlyInfo">{this.props.className}
+                        <img 
+                            className="imgAlbumInfo vertical-center"
+                            src={this.props.album.urlCover}
+                            alt={"Logo " + this.props.album.name}
+                        />
+                        <div className="infoAlbum vertical-center">
+                            <p className="nameAlbumOnlyInfo">{this.props.album.name}</p> 
+                            <p className="artistAlbum">{this.props.album.artist}</p>
+                            <p className="yearAlbum">{this.props.album.year}</p>
+                        </div>
                     </div>
-                </div>
-            )
-        }else{
-            return (
+            }
+            {
+                !this.props.onlyInfo &&
                 <div className="album" onClick={this.onClickHandler}>
                     <img 
                         className="imgAlbum vertical-center"
@@ -37,9 +39,10 @@ class Album extends Component {
                         <p className="nameAlbum">{this.props.album.name}</p>
                         <p className="yearAlbum">{this.props.album.year}</p>
                     </div>
-                </div>
-            ) 
-        }    
+                </div> 
+            } 
+            </div>
+        )   
     }
 
     onClickHandler(){

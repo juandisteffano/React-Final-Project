@@ -38,7 +38,7 @@ export class ArtistView extends Component {
                     />
 
                     <div className="pathNav">
-                        <Link to="/">Home</Link> -> 
+                        <Link to="/home/">Home</Link> -> 
                         <Link to={"/search/" + this.state.artist.name}>Artist</Link> ->
                         <Link to={"/artist/" + this.state.artist.id}>{this.state.artist.name}</Link>  
                     </div>
@@ -66,7 +66,7 @@ export class ArtistView extends Component {
     
     componentDidMount(){
         this.props.showSearchInHeader(true);
-        getArtist(this.props.match.params.idartist)
+        getArtist(this.props.match.params.idartist, this.props.config)
             .then(
                 (data) => {this.setState({artist: data})}
                 )
@@ -78,7 +78,8 @@ export class ArtistView extends Component {
 //SACAR SI ES SOLO SHOW
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader
+        showSearchInHeader: state.showSearchInHeader,
+        config: state.config
     };
 }
 

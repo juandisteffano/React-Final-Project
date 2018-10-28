@@ -38,7 +38,7 @@ export class AlbumView extends Component {
                     />
 
                     <div className="pathNav">
-                        <Link to="/">Home</Link> -> 
+                        <Link to="/home/">Home</Link> -> 
                         <Link to={"/search/" + this.state.album.artist}>Artist</Link> -> 
                         <Link to={"/artist/" + this.state.album.artistId}>{this.state.album.artist}</Link> -> 
                         <Link to={"/album/" + this.state.album.id}>{this.state.album.name}</Link>
@@ -56,7 +56,7 @@ export class AlbumView extends Component {
 
     componentDidMount(){
         this.props.showSearchInHeader(true);
-        getAlbum(this.props.match.params.idalbum)
+        getAlbum(this.props.match.params.idalbum, this.props.config)
             .then(
                 (data) => {this.setState({album: data})}
                 )
@@ -68,7 +68,8 @@ export class AlbumView extends Component {
 //SACAR SI ES SOLO SHOW
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader
+        showSearchInHeader: state.showSearchInHeader,
+        config: state.config
     };
 }
 

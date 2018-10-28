@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 
-//Logo
-import logo from '../../assets/spotifyLogo.png';
-
 //CSS
 import './Header.css'
 
 //Components
 import SearchField from '../SearchField'
+import HeaderMobile from '../HeaderMobile'
+import LogoHeader from '../LogoHeader'
 
 //Redux
 import { connect } from 'react-redux';
@@ -17,39 +16,38 @@ export class Header extends Component {
     render() {
             return (
                 <header className="header">
+                {
+                    !this.props.isMobile &&
+                    <div className="notMobile">
                     {
                         this.props.showSearchInHeader ?
-                            <a href="/">
-                                <img src={logo} 
-                                    alt="Logo" 
-                                    className="logo-header vertical-center"
-                                    href="/"
-                                />
-                            </a>
-                            :
-                            <a href="/">
-                                <img src={logo} 
-                                    alt="Logo" 
-                                    className="logo-header horizontal-center vertical-center"
-                                ></img>
-                            </a>
+                        <LogoHeader className="ref"/>
+                        :
+                        <LogoHeader className="ref center"/>    
                     }
                     {
                         this.props.showSearchInHeader &&
                         <SearchField 
                             placeholder="Search for another artist"
-                            className="vertical-center"
                         />
                     }
+                    </div>
+                }
+                {
+                    this.props.isMobile &&
+                    <HeaderMobile/>
+                }
                 </header>
             )
     }
 }
 
 
+
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader
+        showSearchInHeader: state.showSearchInHeader,
+        isMobile: state.isMobile
     };
 }
 

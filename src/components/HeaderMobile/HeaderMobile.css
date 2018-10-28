@@ -1,13 +1,4 @@
-
-.header {
-    box-sizing: border-box;
-    float: none;
-    overflow: auto;
-    width: auto;
-    margin-bottom: 1%;
-}
-
-.notMobile{
+.headerMobile{
     box-sizing: border-box;
     display: block;
     float: none;
@@ -16,20 +7,21 @@
     padding: 2%;
     margin-left: auto;
     margin-right: auto;
+
 }
-.ref{
-    float: left;
-    overflow: auto;
-    width: 60px;
+.searchBarMobile{
+    display: block;
+    float: none;
+    width: 100% ;
+    margin-bottom: 5%;
 }
 
-.ref.center{
-    float: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.headerMobile .ref.center{
+    display: inline;
 }
-.logo-header{
+
+.iconSearchMobile{
+    float: right;
     height: 60px;
     width: 60px;
     box-sizing: border-box;
@@ -37,11 +29,10 @@
 
 /*Mobile*/
 @media screen and (max-width: 600px){
-    .logo-header{
+    .iconSearchMobile{
         height: 40px !important;
         width: 40px !important;
     }
 }
-
 
 

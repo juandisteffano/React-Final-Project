@@ -1,36 +1,36 @@
 
 //Config
-import config from '../config' 
+//import config from '../config' 
 
-function fetchSearchArtists(artist){
+function fetchSearchArtists(artist,config){
     const url = config.baseUrl + "search?q=" + artist + "&type=artist"
-    return fetchData(url); 
+    return fetchData(url,config); 
 }
 
 
-function fetchArtist(idArtist){
+function fetchArtist(idArtist,config){
     const url = config.baseUrl + "artists/" + idArtist; 
-    return fetchData(url); 
+    return fetchData(url,config); 
 }
 
 
-function fetchArtistAlbums(idArtist){
+function fetchArtistAlbums(idArtist,config){
     const url = config.baseUrl + "artists/" + idArtist + "/albums?include_groups=single%2Calbum&market=ES&limit=25"; 
-    return fetchData(url); 
+    return fetchData(url,config); 
 }
 
-function fetchAlbum(idAlbum){
+function fetchAlbum(idAlbum,config){
     const url = config.baseUrl + "albums/" + idAlbum; 
-    return fetchData(url); 
+    return fetchData(url,config); 
 }
 
-function fetchAlbumTracks(idAlbum){
+function fetchAlbumTracks(idAlbum,config){
     const url = config.baseUrl + "albums/" + idAlbum + "/tracks"; 
-    return fetchData(url); 
+    return fetchData(url,config); 
 }
 
 
-function fetchData(url){
+function fetchData(url,config){
     return fetch(url, config.options)
         .then(response => response.json())
         .then(data => {return data})

@@ -8,6 +8,8 @@ import { parseToTrackModel } from '../Models/TrackModel'
 const initialState = {
     favoriteSongsList: [],
     showSearchInHeader: true,
+    config: {},
+    isMobile: false,
 }
 
 const reducer = (state=initialState, action)=>{
@@ -30,6 +32,18 @@ const reducer = (state=initialState, action)=>{
             return {
                 ...state, 
                 showSearchInHeader: action.showSearchInHeader
+            }
+          
+        case 'SET_CONFIG':
+            return {
+                ...state, 
+                config: action.config
+            }
+          
+        case 'IS_MOBILE':
+            return {
+                ...state, 
+                isMobile: action.isMobile
             }
         default:
             return state;

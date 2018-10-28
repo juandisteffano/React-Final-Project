@@ -18,7 +18,9 @@ const getRoutes = function() {
 
             
             <Switch>
-                <Route exact path="/" component={HomeView} />
+                <Route exact path="/" component={() => window.location = 'http://localhost:8888'} />
+                <Route exact path="/home/:id" component={HomeView} />
+                <Route path="/home/" component={HomeView} />
                 <Route path="/search/:searchkey" component={ArtistSearchView} />
                 <Route path="/artist/:idartist" component={ArtistView} />
                 <Route path="/album/:idalbum" component={AlbumView} />

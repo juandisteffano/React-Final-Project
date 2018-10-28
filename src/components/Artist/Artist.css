@@ -49,10 +49,20 @@
 
 }
 
-.nameArtist{
-    font-size: 1.5rem;
+.nameArtist,
+.nameArtistOnlyInfo{
     font-weight: bold;
-    margin-left: 5%
+    margin-left: 5%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+.nameArtist{
+    font-size: 1.1rem;
+
+}
+.nameArtistOnlyInfo{
+    font-size: 1.5rem;
 }
 
 .genereArtist{

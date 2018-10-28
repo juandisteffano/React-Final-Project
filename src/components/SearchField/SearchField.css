@@ -1,16 +1,14 @@
 .search-field{
     float: right;
     box-sizing: border-box;
-
     background: #fcfcfc;
     border: 1px solid #aaa;
     border-radius: 9999em;
     box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
-    overflow: auto;
-   
     width: 30%;
     height: 2.2rem;
 
+    transform: translateY(50%);
 }
 
 
@@ -40,8 +38,18 @@
     height: 90%;
     border: none;
     background: transparent;
+}
 
 
+@keyframes slider {
+    from {height: 0;
+        font-size: 0}
+    to {height: 35px;
+        font-size: 1rem}
+}
 
-
+/* The element to apply the animation to */
+.slide {
+    animation-name: slider;
+    animation-duration: 1s;
 }

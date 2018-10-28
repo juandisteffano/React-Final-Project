@@ -48,16 +48,25 @@
 
 }
 
-.nameAlbum{
-    font-size: 1.5rem;
+.nameAlbum,
+.nameAlbumOnlyInfo{
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-left: 5%
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.nameAlbum{
+    font-size: 1.1rem;
+}
+.nameAlbumOnlyInfo{
+    font-size: 1.5rem;
 }
 
 .artistAlbum,
 .yearAlbum{
     font-size: 1rem;
-    margin-left: 5%
 }
 
 

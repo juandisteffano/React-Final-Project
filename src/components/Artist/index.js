@@ -19,8 +19,8 @@ class Artist extends Component {
                         alt={"Logo " + this.props.artist.name}
                     />
                     <div className="infoArtist vertical-center">
-                        <p className="nameArtist">{this.props.artist.name}</p>
-                        <p className="genereArtist">{this.props.artist.genere}</p>
+                        <p className="nameArtistOnlyInfo">{this.props.artist.name}</p>
+                        <p className="genereArtist">{this.props.artist.genres}</p>
                     </div>
                 </div>
             )
