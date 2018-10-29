@@ -7,6 +7,7 @@
     padding: 2%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 3%;
 
 }
 .searchBarMobile{
@@ -16,23 +17,64 @@
     margin-bottom: 5%;
 }
 
-.headerMobile .ref.center{
-    display: inline;
+.headerMobile .refLogo{
+    width: 30px;
+    height: 30px;
 }
+.headerMobile .refLogo .logo-header{
+    width: 30px;
+    height: 30px;
+}
+
 
 .iconSearchMobile{
     float: right;
-    height: 60px;
-    width: 60px;
+    height: 30px;
+    width: 30px;
     box-sizing: border-box;
+    
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
 }
 
 /*Mobile*/
 @media screen and (max-width: 600px){
     .iconSearchMobile{
-        height: 40px !important;
-        width: 40px !important;
+        height: 20px !important;
+        width: 20px !important;
     }
 }
 
 
+arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 //Logo
-import magnifyingGlassDown from '../../assets/magnifyingGlassDown.png';
-import magnifyingGlassUp from '../../assets/magnifyingGlassUp.png';
+import magnifyingGlass from '../../assets/magnifyingGlass.png';
 
 //CSS
 import './HeaderMobile.css'
@@ -28,22 +27,28 @@ export class HeaderMobile extends Component {
                         className="ref center"
                     />
                     {
-                        !this.state.showSearchBar &&
+                        !this.state.showSearchBar && this.props.showSearchInHeader &&
+                        <div className="iconSearchMobile">
                         <img 
-                            src={magnifyingGlassDown} 
+                            src={magnifyingGlass} 
                             alt="Search button" 
                             onClick={() => {this.setState({showSearchBar: true})}}
                             className="iconSearchMobile"
                         />
+                        <arrow className="down"/>
+                        </div>
                     }
                     {
-                        this.state.showSearchBar &&
+                        this.state.showSearchBar && this.props.showSearchInHeader &&
+                        <div className="iconSearchMobile">
                         <img 
-                            src={magnifyingGlassUp} 
+                            src={magnifyingGlass} 
                             alt="Search button" 
                             onClick={() => {this.setState({showSearchBar: false})}}
                             className="iconSearchMobile"
                         />
+                        <arrow className="up"/>
+                        </div>
                     }
                     {
                         this.state.showSearchBar &&

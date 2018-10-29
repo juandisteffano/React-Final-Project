@@ -13,7 +13,7 @@
     display: block;
     box-sizing: border-box;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .infoArtistSearchView {
@@ -22,3 +22,7 @@
     width: auto;
 }
 
+.artistSearchView h2 {
+    float: none;
+    margin-left: 0%;
+}

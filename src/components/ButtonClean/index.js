@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 export class ButtonClean extends Component {
 
     render() {
-        console.log(this.props.favoriteSongsList.length)
         return (
             <button 
                 className="buttonClean" 

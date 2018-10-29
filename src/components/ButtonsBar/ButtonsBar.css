@@ -1,7 +1,9 @@
 .buttonsBar{
     display: block;
     float: right;
-    width: 40%;
+    width: 50%;
     transform: translateY(50%);
     overflow: auto;
 }
+
+ 
