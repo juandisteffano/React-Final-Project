@@ -5,14 +5,8 @@ import { Link } from 'react-router-dom';
 import './ArtistView.css'
 
 //Components
-import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
-import Album from '../../components/Album'
-
-//Model
-//import ArtistModel from '../../Models/ArtistModel'
-//import AlbumModel from '../../Models/AlbumModel'
-
+import ListAlbums from '../../components/ListAlbums'
 //Util
 import { getArtist } from '../../Utils/parser'
 
@@ -23,12 +17,12 @@ export class ArtistView extends Component {
     constructor(props){
         super(props)
         this.state = {
-            //artist: new ArtistModel("3SuDVRoeAU00LbpCeMgxGx", "Oasis", "Rock", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
             artist: null,
         }
     }
+    
     render() {
-        //Acomodar cuando artist es null
+        
         if(this.state.artist){
             return(
                 <article className="artistView">
@@ -42,26 +36,18 @@ export class ArtistView extends Component {
                         <Link to={"/search/" + this.state.artist.name}>Artist</Link> ->
                         <Link to={"/artist/" + this.state.artist.id}>{this.state.artist.name}</Link>  
                     </div>
-
-                    <ListElements
-                        elements={this.state.artist ? this.renderAlbums(this.state.artist) : null}
-                        msj="No Albums"
+                   
+                    <ListAlbums
+                        albums={this.state.artist.albums}
                     />
                 </article>
             )
         }else{
-            return null
+            return (
+                <p>Error: Incorrect Artist ID</p>
+            )
         }
         
-    }
-
-    renderAlbums(artist){
-        const albums = artist.albums.map( (album, index) => {
-            return (
-                <Album album={album} key={index} onlyInfo={false}/>
-            )
-        })
-        return albums;
     }
     
     componentDidMount(){
@@ -75,10 +61,9 @@ export class ArtistView extends Component {
     }
 }
 
-//SACAR SI ES SOLO SHOW
+
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader,
         config: state.config
     };
 }

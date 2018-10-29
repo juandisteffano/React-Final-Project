@@ -4,11 +4,7 @@ import React, { Component } from 'react';
 import './Album.css'
 
 class Album extends Component {
-    constructor(props){
-        super(props);
-        this.onClickHandler = this.onClickHandler.bind(this);
-    }
-    
+
     render() {
         return(
             <div>
@@ -29,7 +25,11 @@ class Album extends Component {
             }
             {
                 !this.props.onlyInfo &&
-                <div className="album" onClick={this.onClickHandler}>
+                <a 
+                    href={"/album/" + this.props.album.id}
+                    className="album"
+                    title={this.props.album.name}
+                >
                     <img 
                         className="imgAlbum vertical-center"
                         src={this.props.album.urlCover}
@@ -39,16 +39,13 @@ class Album extends Component {
                         <p className="nameAlbum">{this.props.album.name}</p>
                         <p className="yearAlbum">{this.props.album.year}</p>
                     </div>
-                </div> 
+                </a> 
             } 
             </div>
         )   
     }
 
-    onClickHandler(){
-        window.location.href = "/album/" + this.props.album.id;
 
-    }
 }
 
 export default Album;

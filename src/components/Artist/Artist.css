@@ -8,6 +8,10 @@
     height: 120px;
     background-color: beige;
     box-shadow: inset 1px 1px 50px #000;
+    color: black;
+}
+.artist:visited{
+    color: black;
 }
 
 

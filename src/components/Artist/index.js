@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 import './Artist.css'
 
 class Artist extends Component {
-    constructor(props){
-        super(props);
-        this.onClickHandler = this.onClickHandler.bind(this);
-    }
 
     render() {
         if(this.props.onlyInfo){
@@ -26,7 +22,11 @@ class Artist extends Component {
             )
         }else{
             return (
-                <div className="artist" onClick={this.onClickHandler}>
+                <a 
+                    className="artist" 
+                    href={"/artist/" + this.props.artist.id}
+                    title={this.props.artist.name}
+                >
                     <img 
                         className="imgArtist vertical-center"
                         src={this.props.artist.urlCover}
@@ -35,14 +35,12 @@ class Artist extends Component {
                     <div className="infoArtist vertical-center">
                         <p className="nameArtist">{this.props.artist.name}</p>
                     </div>
-                </div>
+                </a>
             ) 
         }    
     }
 
-    onClickHandler(){
-        window.location.href = "/artist/" + this.props.artist.id;
-    }
+  
 }
 
 export default Artist;

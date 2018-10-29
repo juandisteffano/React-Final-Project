@@ -8,10 +8,6 @@ import './AlbumView.css'
 import Album from '../../components/Album'
 import ListSongsAlbum from '../../components/ListSongsAlbum'
 
-//Model
-//import AlbumModel from '../../Models/AlbumModel'
-//import TrackModel from '../../Models/TrackModel'
-
 //Util
 import { getAlbum } from '../../Utils/parser'
 
@@ -22,13 +18,11 @@ export class AlbumView extends Component {
     constructor(props){
         super(props)
         this.state = {
-            //album: new AlbumModel("id", "Disco1", "Oasis","artistId", "1995", "https://i.scdn.co/image/5fe478ce32d659d5b62391549d6b3496542cb046"),
             album: null
         }
     }
-    render() {
 
-        //Acomodar cuando album es null
+    render() {
         if(this.state.album){
             return(
                 <article className="albumView">
@@ -50,7 +44,9 @@ export class AlbumView extends Component {
                 </article>
             )
         }else{
-            return null;
+            return (
+                <p>Error: Incorrect Album ID</p>
+            )
         }
     }
 
@@ -64,11 +60,8 @@ export class AlbumView extends Component {
     }
 }
 
-
-//SACAR SI ES SOLO SHOW
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader,
         config: state.config
     };
 }
@@ -84,7 +77,5 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(AlbumView);

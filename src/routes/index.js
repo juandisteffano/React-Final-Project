@@ -14,7 +14,7 @@ import Footer from '../components/Footer'
 const getRoutes = function() {
     return (
         <div>
-            <Header></Header>
+            <Header />
 
             
             <Switch>
@@ -26,7 +26,7 @@ const getRoutes = function() {
                 <Route path="/album/:idalbum" component={AlbumView} />
             </Switch>
 
-            <Footer></Footer>
+            <Footer />
         </div>
     )
 };

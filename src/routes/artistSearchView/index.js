@@ -6,29 +6,16 @@ import './ArtistSearchView.css'
 
 //Components
 import SearchField from '../../components/SearchField'
-import ListElements from '../../components/ListElements'
-import Artist from '../../components/Artist'
+import ListArtists from '../../components/ListArtists'
 
-//Util
-import { searchArtists } from '../../Utils/parser'
 
 //Redux
 import { connect } from 'react-redux';
 
 
 export class ArtistSearchView extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            artistsSearchList: []
-        }
-    }
+ 
     render() {
-        const artists = this.state.artistsSearchList.map( (artist, index) => {
-            return (
-                <Artist artist={artist} key={index} onlyInfo={false} />
-            )
-        })
 
         return(
             <article className="artistSearchView">
@@ -36,6 +23,7 @@ export class ArtistSearchView extends Component {
                     <h2>Artists</h2>
                     <h3>You are currently searching: "{this.props.match.params.searchkey}"</h3>
                 </div>
+                
                 <SearchField
                     placeholder="Search for your favorite artist here"
                     className="vertical-center horizontal-center"
@@ -45,32 +33,24 @@ export class ArtistSearchView extends Component {
                     <Link to="/home/">Home</Link> -> 
                     <Link to={"/search/" + this.props.match.params.searchkey}>Artist</Link>
                 </div>
-                
-                <ListElements
-                    elements={artists}
-                    msj="No Results Found"
-                />
 
+                <ListArtists 
+                    artistKeySearch={this.props.match.params.searchkey}
+                    config={this.props.config}
+                />
             </article>
         )
     }
 
     componentDidMount(){
         this.props.showSearchInHeader(false);
-        searchArtists(this.props.match.params.searchkey, this.props.config)
-            .then(
-                (data) => {this.setState({artistsSearchList: data})}
-                )
-            .catch(error => console.error(error)) 
     }
   
 
 }
 
-//SACAR SI ES SOLO SHOW
 const mapStateToProps = state => {
     return {
-        showSearchInHeader: state.showSearchInHeader,
         config: state.config
     };
 }
@@ -86,7 +66,5 @@ const mapDispatchToProps = dispatch => {
         },
     }
 }
-
-
 
 export default connect(mapStateToProps,mapDispatchToProps)(ArtistSearchView);

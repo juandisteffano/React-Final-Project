@@ -7,7 +7,7 @@ class Footer extends Component {
     render() {
         return (
             <footer className="footer">
-                <p>Footer</p>
+                <p>© 2018 Spotify AB</p>
             </footer>
         );
     }
