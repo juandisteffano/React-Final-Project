@@ -5,6 +5,9 @@ import { compose, applyMiddleware } from 'redux';
 //Model
 import { parseToTrackModel } from '../Models/TrackModel'
 
+//Utils
+import sortSongsDuration from '../Utils/orderList'
+
 const initialState = {
     favoriteSongsList: [],
     showSearchInHeader: true,
@@ -45,6 +48,19 @@ const reducer = (state=initialState, action)=>{
                 ...state, 
                 isMobile: action.isMobile
             }
+          
+        case 'CLEAN_FAV_LIST':
+            return {
+                ...state, 
+                favoriteSongsList: []
+            }
+          
+        case 'SORT':
+            return {
+                ...state, 
+                favoriteSongsList: sortSongsDuration(state.favoriteSongsList, action.orderBy)
+            }
+
         default:
             return state;
     }
@@ -65,7 +81,6 @@ const store = compose(applyMiddleware(localStorageMiddleware))(createStore)(
     reducer,
     localStorage.getItem('applicationState') ? JSON.parse(localStorage.getItem('applicationState')) : initialState
 )  
-//const store = createStore(reducer, initialState);
 
 
 export default store;

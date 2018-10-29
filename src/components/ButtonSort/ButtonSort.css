@@ -1,0 +1,30 @@
+.buttonSort{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+
+    background-color: rgba(180, 180, 180, 0.959);
+    color: black;
+    border: 0.50px solid black;
+}
+
+.buttonSort:hover{
+    background-color:rgba(124, 123, 123, 0.959);
+}
+
+.buttonSort:first-child{
+    border-radius: 10px 0px 0px 10px;
+}
+.buttonSort:last-child{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.buttonSort:active {
+    box-shadow: 0 1px #666;
+    transform: translateY(4px);
+  }

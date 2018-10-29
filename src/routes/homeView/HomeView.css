@@ -14,4 +14,17 @@
     box-sizing: border-box;
     width: 100%;
     margin-bottom: 10%;
+    float: none;
+}
+
+h2 {
+    float: left;
+    margin-left: 5%;
+    width: 40%;
+}
+
+.titleFS{
+    display: block;
+    width: auto;
+    margin-bottom: 10%;
 }

@@ -7,6 +7,7 @@ import './HomeView.css'
 import InfoApp from '../../components/InfoApp'
 import SearchField from '../../components/SearchField'
 import ListFavoriteSongs from '../../components/ListFavoriteSongs'
+import ButtonsBar from '../../components/ButtonsBar'
 
 //Redux
 import { connect } from 'react-redux';
@@ -27,6 +28,11 @@ export class HomeView extends Component {
                     placeholder="Type the name of your favorite artist"
                     className="vertical-center horizontal-center" 
                 />
+                <div className="titleFS">
+                    <h2>Favorite Songs</h2>
+                    <ButtonsBar />
+                </div>
+                
                 <ListFavoriteSongs />
             </article>
         )
