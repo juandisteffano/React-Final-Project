@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 //CSS
 import './ButtonsBar.css'
-
 //Components
 import ButtonClean from '../ButtonClean'
 import ButtonSort from '../ButtonSort'
@@ -22,6 +20,5 @@ export default class ButtonsBar extends Component {
                 <ButtonClean />
             </article>
         )
-      
     }
 }

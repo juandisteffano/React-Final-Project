@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 //CSS
 import './Artist.css'
 
@@ -39,8 +38,6 @@ class Artist extends Component {
             ) 
         }    
     }
-
-  
 }
 
 export default Artist;

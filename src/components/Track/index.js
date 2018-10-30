@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-
 //CSS
 import './Track.css'
-
 //Components
 import FavIcon from '../../components/FavIcon'
-
 //Model
 import { parseToTrackModel } from '../../Models/TrackModel'
 
@@ -13,6 +10,7 @@ class Track extends Component {
     
     render() {
         const trackModel = parseToTrackModel(this.props.track);
+        
         return (
             <div className="track">
                 <img 

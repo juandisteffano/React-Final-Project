@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-
 //Components
 import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
-
 //Util
 import { searchArtists } from '../../Utils/parser'
 
-
-
 export default class ListArtist extends Component {
+
     constructor(props){
         super(props)
         this.state = {
             artistsSearchList: []
         }
     }
+
     render() {
         const artists = this.state.artistsSearchList.map( (artist, index) => {
             return (
@@ -38,7 +36,4 @@ export default class ListArtist extends Component {
                 )
             .catch(error => console.error(error)) 
     }
-
 }
-
-

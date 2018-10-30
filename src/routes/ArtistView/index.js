@@ -3,17 +3,16 @@ import { Link } from 'react-router-dom';
 
 //CSS
 import './ArtistView.css'
-
 //Components
 import Artist from '../../components/Artist'
 import ListAlbums from '../../components/ListAlbums'
 //Util
 import { getArtist } from '../../Utils/parser'
-
 //Redux
 import { connect } from 'react-redux';
 
 export class ArtistView extends Component {
+
     constructor(props){
         super(props)
         this.state = {
@@ -22,8 +21,7 @@ export class ArtistView extends Component {
     }
     
     render() {
-        
-        if(this.state.artist){
+        if (this.state.artist){
             return(
                 <article className="artistView">
                     <Artist
@@ -47,7 +45,6 @@ export class ArtistView extends Component {
                 <p>Error: Incorrect Artist ID</p>
             )
         }
-        
     }
     
     componentDidMount(){
@@ -57,7 +54,6 @@ export class ArtistView extends Component {
                 (data) => {this.setState({artist: data})}
                 )
             .catch(error => console.error(error)) 
-        
     }
 }
 
@@ -80,5 +76,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-
-export default connect(mapStateToProps,mapDispatchToProps)(ArtistView);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistView);

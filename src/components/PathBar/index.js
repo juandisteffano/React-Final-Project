@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-
 //CSS
 import './PathBar.css'
-
 //Components
 //import Album from '../../components/Album'
 //import ListSongsAlbum from '../../components/ListSongsAlbum'
-
 //Redux
 import { connect } from 'react-redux';
 
 export class PathBar extends Component {
+
     render() {
             return(
                 null
@@ -36,4 +34,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(PathBar);
+export default connect(mapStateToProps, mapDispatchToProps)(PathBar);

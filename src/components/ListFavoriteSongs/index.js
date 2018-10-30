@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
 //Components
 import ListElements from '../../components/ListElements'
 import Track from '../../components/Track'
-
 //Redux
 import { connect } from 'react-redux';
 
@@ -24,7 +22,6 @@ export class ListFavoriteSongs extends Component {
             /> 
         )
     }
-      
 }
 
 const mapStateToProps = state => {

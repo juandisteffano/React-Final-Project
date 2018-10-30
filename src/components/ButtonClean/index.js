@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 //CSS
 import './ButtonClean.css'
-
 //Redux
 import { connect } from 'react-redux';
 

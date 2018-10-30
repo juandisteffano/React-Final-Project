@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 //CSS
 import './Album.css'
 
@@ -44,8 +43,6 @@ class Album extends Component {
             </div>
         )   
     }
-
-
 }
 
 export default Album;

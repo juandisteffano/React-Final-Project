@@ -10,6 +10,7 @@
     box-shadow: inset 1px 1px 50px #000;
     color: black;
 }
+
 .album:visited{
     color: black;
 }
@@ -31,13 +32,13 @@
     background-color: rgba(0,0,0,0.5);
 }
 
-
 .imgAlbum{
     box-sizing: border-box;
     float: left;
     width: 30%;
     max-width: 110px;
 }
+
 .imgAlbumInfo{
     box-sizing: border-box;
     float: left;
@@ -72,9 +73,6 @@
 .yearAlbum{
     font-size: 1rem;
 }
-
-
-
 
 /*Mobile*/
 @media screen and (max-width: 600px){

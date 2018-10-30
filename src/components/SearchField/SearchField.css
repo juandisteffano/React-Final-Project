@@ -7,12 +7,10 @@
     box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
     width: 30%;
     height: 2.2rem;
-
     transform: translateY(50%);
     margin-bottom: 2%;
     overflow: auto;
 }
-
 
 .search-field .icon { 
     position: relative;
@@ -20,14 +18,11 @@
     width: 10%;
     float: left;
     max-width: 50px;
-    
-
     background-image: url('../../assets/magnifyingGlass.png');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
     background-size: 40% 40%;
-
     height: 100%;
   }
 
@@ -36,12 +31,10 @@
     box-sizing: border-box;
     width: 90%;
     float: none;
-
     height: 90%;
     border: none;
     background: transparent;
 }
-
 
 @keyframes slider {
     from {height: 0;
@@ -50,7 +43,6 @@
         font-size: 1rem}
 }
 
-/* The element to apply the animation to */
 .slide {
     animation-name: slider;
     animation-duration: 1s;

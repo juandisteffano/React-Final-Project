@@ -47,12 +47,7 @@ export class HomeView extends Component {
         if(getAllUrlParams(this.props.match.url).access_token)
             this.props.setConfig(getAllUrlParams(this.props.match.url).access_token)
     }
-
-    
-
-      
 }
-
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -88,8 +83,6 @@ const mapDispatchToProps = dispatch => {
             }
             dispatch(action);
         },
-        
-        
     }
 }
 

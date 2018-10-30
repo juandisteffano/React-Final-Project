@@ -17,8 +17,10 @@
     text-overflow: ellipsis;
 }
 
+.trackAlbumList:nth-child(odd) {
+    background: #CCC
+}
 
-
-.trackAlbumList:nth-child(odd) {background: #CCC}
-.trackAlbumList:nth-child(even) {background: #FFF}
-
+.trackAlbumList:nth-child(even) {
+    background: #FFF
+}

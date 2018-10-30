@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-
 //Icon
 import star from '../../assets/star.png';
 import starSelected from '../../assets/starSelected.png';
 //CSS
 import './FavIcon.css'
-
 //Model
 import { parseToTrackModel } from '../../Models/TrackModel'
-
 //Redux
 import { connect } from 'react-redux';
 
-
 export class FavIcon extends Component {
+
     render() {
         const trackModel = parseToTrackModel(this.props.track);
+
         return ( 
             <div className="favIcon">
                 {
@@ -49,13 +47,11 @@ export class FavIcon extends Component {
     }
 }
 
-
 const mapStateToProps = state => {
     return {
         favoriteSongsList: state.favoriteSongsList,
     };
 }
-  
 const mapDispatchToProps = dispatch => {
     return{
         handleAddClick(song){
@@ -75,8 +71,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-
-export default connect(mapStateToProps,mapDispatchToProps)(FavIcon);
-
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(FavIcon);

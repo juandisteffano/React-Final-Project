@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-
 //CSS
 import './ButtonSort.css'
-
 //Redux
 import { connect } from 'react-redux';
 
 export class ButtonSort extends Component {
 
     render() {
-
         return (
             <button 
                 className="buttonSort" 
@@ -18,7 +15,6 @@ export class ButtonSort extends Component {
                 {this.props.orderBy}
             </button>
         )
-      
     }  
 }
 

@@ -1,4 +1,5 @@
 export default class ArtistModel {
+
     constructor(id, name, genres, urlCover){
         this.id = id;
         this.name = name;
@@ -49,11 +50,9 @@ export default class ArtistModel {
     get albums(){
         return this._albums;
     }
-
     set albums(albums){
         this._albums = albums;
     }
-
     addAlbum(album){
         this._albums.push(album);
     }

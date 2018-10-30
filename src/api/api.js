@@ -1,4 +1,3 @@
-
 //Config
 //import config from '../config' 
 
@@ -7,12 +6,10 @@ function fetchSearchArtists(artist,config){
     return fetchData(url,config); 
 }
 
-
 function fetchArtist(idArtist,config){
     const url = config.baseUrl + "artists/" + idArtist; 
     return fetchData(url,config); 
 }
-
 
 function fetchArtistAlbums(idArtist,config){
     const url = config.baseUrl + "artists/" + idArtist + "/albums?include_groups=single%2Calbum&market=ES&limit=25"; 
@@ -28,7 +25,6 @@ function fetchAlbumTracks(idAlbum,config){
     const url = config.baseUrl + "albums/" + idAlbum + "/tracks"; 
     return fetchData(url,config); 
 }
-
 
 function fetchData(url,config){
     return fetch(url, config.options)

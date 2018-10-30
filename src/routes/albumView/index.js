@@ -3,18 +3,16 @@ import { Link } from 'react-router-dom';
 
 //CSS
 import './AlbumView.css'
-
 //Components
 import Album from '../../components/Album'
 import ListSongsAlbum from '../../components/ListSongsAlbum'
-
 //Util
 import { getAlbum } from '../../Utils/parser'
-
 //Redux
 import { connect } from 'react-redux';
 
 export class AlbumView extends Component {
+
     constructor(props){
         super(props)
         this.state = {
@@ -23,7 +21,7 @@ export class AlbumView extends Component {
     }
 
     render() {
-        if(this.state.album){
+        if (this.state.album){
             return(
                 <article className="albumView">
                     <Album
@@ -65,7 +63,6 @@ const mapStateToProps = state => {
         config: state.config
     };
 }
-
 const mapDispatchToProps = dispatch => {
     return{
         showSearchInHeader(showSearchInHeader){
@@ -78,4 +75,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(AlbumView);
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumView);

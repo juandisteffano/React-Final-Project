@@ -8,14 +8,15 @@
     outline: none;
     border: none;
     border-radius: 5px;
-
     background-color: rgba(180, 180, 180, 0.959);
     color: black;
     border: 0.50px solid black;
 }
+
 .buttonClean:disabled{
     background-color:rgba(124, 123, 123, 0.959);
 }
+
 .buttonClean:hover{
     background-color:rgba(124, 123, 123, 0.959);
 }
@@ -23,17 +24,18 @@
 .buttonClean:active {
     box-shadow: 0 1px #666;
     transform: translateY(4px);
-  }
+}
 
 .buttonClean:first-child{
     border-radius: 10px 0px 0px 10px;
 }
+
 .buttonClean:last-child{
     border-radius: 0px 10px 10px 0px;
 }
 
   /*Mobile*/
-  @media screen and (max-width: 541px){
+@media screen and (max-width: 541px){
     .buttonClean{
         padding: 2px 6px;
         font-size: 0.75rem;

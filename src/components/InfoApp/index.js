@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 //CSS
 import './InfoApp.css'
-
 
 class InfoApp extends Component {
 

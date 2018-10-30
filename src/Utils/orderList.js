@@ -1,12 +1,11 @@
 export default function sortSongsDuration(songs, orderBy){
     let res = [];
-    if(orderBy === "Asc"){
+    if (orderBy === "Asc"){
         res = res.concat(songs.sort(durationCompareAsc));
     };
-    if(orderBy === "Desc"){
+    if (orderBy === "Desc"){
         res = res.concat(songs.sort(durationCompareDesc));
     };
-
     return res;
 }
 
@@ -25,5 +24,4 @@ function durationCompareDesc(a,b) {
       return -1;
     return 0;
 }
-  
   

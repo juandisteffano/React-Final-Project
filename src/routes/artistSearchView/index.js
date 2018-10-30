@@ -3,12 +3,9 @@ import { Link } from 'react-router-dom';
 
 //CSS
 import './ArtistSearchView.css'
-
 //Components
 import SearchField from '../../components/SearchField'
 import ListArtists from '../../components/ListArtists'
-
-
 //Redux
 import { connect } from 'react-redux';
 
@@ -16,7 +13,6 @@ import { connect } from 'react-redux';
 export class ArtistSearchView extends Component {
  
     render() {
-
         return(
             <article className="artistSearchView">
                 <div className="infoArtistSearchView">
@@ -45,8 +41,6 @@ export class ArtistSearchView extends Component {
     componentDidMount(){
         this.props.showSearchInHeader(false);
     }
-  
-
 }
 
 const mapStateToProps = state => {
@@ -54,7 +48,6 @@ const mapStateToProps = state => {
         config: state.config
     };
 }
-
 const mapDispatchToProps = dispatch => {
     return{
         showSearchInHeader(showSearchInHeader){
@@ -67,4 +60,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(ArtistSearchView);
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistSearchView);

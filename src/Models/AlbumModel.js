@@ -1,4 +1,5 @@
 export default class Album {
+
     constructor(id, name, artist, artistId, year, urlCover){
         this.id = id;
         this.name = name;

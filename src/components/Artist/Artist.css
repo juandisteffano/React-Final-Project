@@ -10,10 +10,10 @@
     box-shadow: inset 1px 1px 50px #000;
     color: black;
 }
+
 .artist:visited{
     color: black;
 }
-
 
 .artistOnlyInfo{
     box-sizing: border-box;
@@ -30,7 +30,6 @@
 .artist:hover {
 	background-color: rgba(0,0,0,0.5);
 }
-
 
 .imgArtist{
     box-sizing: border-box;
@@ -61,10 +60,12 @@
     white-space:nowrap;
     text-overflow: ellipsis;
 }
+
 .nameArtist{
     font-size: 1.1rem;
 
 }
+
 .nameArtistOnlyInfo{
     font-size: 1.5rem;
 }
@@ -73,8 +74,6 @@
     font-size: 1rem;
     margin-left: 5%
 }
-
-
 
 /*Mobile*/
 @media screen and (max-width: 600px){

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 //Components
 import ListElements from '../../components/ListElements'
 import Album from '../../components/Album'
 
-;
 
 export default class ListAlbums extends Component {
 

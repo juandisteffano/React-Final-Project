@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-
 //CSS
 import './SearchField.css'
 
 class SearchField extends Component {
+
     constructor(props){
         super(props)
 
         this.onKeyDownHandler = this.onKeyDownHandler.bind(this);
     }
+
     render() {
         return (
             <div className={"search-field " + this.props.className} >
@@ -22,14 +23,11 @@ class SearchField extends Component {
         );
     }
 
-
     onKeyDownHandler(e) {
         if(e.key === "Enter"){
             window.location.href = "/search/" + e.target.value
         }
     }
 }
-
-
 
 export default SearchField;

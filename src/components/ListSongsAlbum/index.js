@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
 //CSS
 import './ListSongsAlbum.css'
 //Components
 import AlbumDisc from '../../components/AlbumDisc'
 
 class ListSongsAlbum extends Component {
+
     render() {
         let albumsCD = [];
         this.props.album.tracks.forEach(song => {

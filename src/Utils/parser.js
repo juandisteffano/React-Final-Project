@@ -2,10 +2,8 @@
 import ArtistModel from '../Models/ArtistModel'
 import AlbumModel from '../Models/AlbumModel'
 import TrackModel from '../Models/TrackModel'
-
 //Api
 import { fetchSearchArtists, fetchArtist, fetchArtistAlbums, fetchAlbum, fetchAlbumTracks } from '../api/api'
-
 //Assets 
 import defaultLogo from '../assets/defaultImg.PNG'
 
@@ -16,7 +14,6 @@ function searchArtists(artist,config){
             data.artists.items.forEach(e => {
                 resp.push(new ArtistModel(e.id,e.name,e.genres,e.images.length>0 ? e.images[0].url : defaultLogo))
                 });
-                
             return resp
           })
         .catch(error => console.error(error)) 
@@ -31,14 +28,10 @@ function getArtist(idArtist,config){
             albums.items.forEach(e => {
                 artist.addAlbum(new AlbumModel(e.id, e.name, e.artists[0].name, e.artists[0].id, e.release_date, e.images.length>0 ? e.images[0].url : defaultLogo))
                 });
-    
             return artist
           })
     .catch(error => console.error(error)) 
-
 }
-
-
 
 function getAlbum(idAlbum,config){
     return fetchAlbum(idAlbum,config)
@@ -49,7 +42,6 @@ function getAlbum(idAlbum,config){
             tracks.items.forEach(e => {
                 album.addTrack(new TrackModel(e.id, e.name, e.artists[0].name, album.name, e.disc_number, e.track_number, album.urlCover, e.duration_ms, e.preview_url))
                 });
-            
             return album
           })
     .catch(error => console.error(error)) 

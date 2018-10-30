@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-
 //Logo
 import logo from '../../assets/spotifyLogo.png';
-
 //CSS
 import './LogoHeader.css'
-
 
 export default class LogoHeader extends Component {
 
@@ -20,4 +17,3 @@ export default class LogoHeader extends Component {
         )
     }
 }
-

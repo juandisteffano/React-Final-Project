@@ -1,10 +1,7 @@
 import { createStore } from 'redux';
-
 import { compose, applyMiddleware } from 'redux';
-
 //Model
 import { parseToTrackModel } from '../Models/TrackModel'
-
 //Utils
 import sortSongsDuration from '../Utils/orderList'
 
@@ -76,11 +73,9 @@ const localStorageMiddleware = ({getState}) => {
     };
   };
 
-
 const store = compose(applyMiddleware(localStorageMiddleware))(createStore)(
     reducer,
     localStorage.getItem('applicationState') ? JSON.parse(localStorage.getItem('applicationState')) : initialState
 )  
-
 
 export default store;
