@@ -10,6 +10,7 @@ const initialState = {
     showSearchInHeader: true,
     config: {},
     isMobile: false,
+    artistSearchKey: null,
 }
 
 const reducer = (state=initialState, action)=>{
@@ -19,7 +20,6 @@ const reducer = (state=initialState, action)=>{
             return {
                 ...state,
                 favoriteSongsList: state.favoriteSongsList.concat(action.song),
-
             }
           
         case 'DELETE_SONG':
@@ -56,6 +56,24 @@ const reducer = (state=initialState, action)=>{
             return {
                 ...state, 
                 favoriteSongsList: sortSongsDuration(state.favoriteSongsList, action.orderBy)
+            }
+          
+        case 'SET_ARTISTS_SEARCH_KEY':
+            return {
+                ...state, 
+                artistSearchKey: action.artistSearchKey
+            }
+          
+        case 'SET_ARTISTS_ID':
+            return {
+                ...state, 
+                artistId: action.artistId
+            }
+          
+        case 'SET_ALBUM_ID':
+            return {
+                ...state, 
+                albumId: action.albumId
             }
 
         default:

@@ -4,12 +4,15 @@ import ListElements from '../../components/ListElements'
 import Artist from '../../components/Artist'
 //Util
 import { searchArtists } from '../../Utils/parser'
+//Redux
+import { connect } from 'react-redux';
 
-export default class ListArtist extends Component {
+export class ListArtist extends Component {
 
     constructor(props){
         super(props)
         this.state = {
+            keySearch: null,
             artistsSearchList: []
         }
     }
@@ -30,10 +33,24 @@ export default class ListArtist extends Component {
     }
 
     componentDidMount(){
-        searchArtists(this.props.artistKeySearch, this.props.config)
-            .then(
-                (data) => {this.setState({artistsSearchList: data})}
-                )
-            .catch(error => console.error(error)) 
+        if (this.props.artistSearchKey.localeCompare(this.state.keySearch) !== 0){
+            searchArtists(this.props.artistSearchKey, this.props.config)
+                .then(
+                    (data) => {this.setState({
+                        keySearch: this.props.artistSearchKey,
+                        artistsSearchList: data
+                        })}
+                    )
+                .catch(error => console.error(error)) 
+        }
     }
 }
+
+const mapStateToProps = state => {
+    return {
+        artistSearchKey: state.artistSearchKey
+    };
+}
+
+
+export default connect(mapStateToProps, null)(ListArtist);

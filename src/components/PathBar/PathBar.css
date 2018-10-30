@@ -1,0 +1,12 @@
+.pathBar{
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    float: none;
+    margin-left: 1%;
+}
+
+.link {
+    display: inline;
+    margin: 0px 2px;
+}

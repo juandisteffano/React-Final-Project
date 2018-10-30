@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 //CSS
 import './AlbumView.css'
 //Components
 import Album from '../../components/Album'
 import ListSongsAlbum from '../../components/ListSongsAlbum'
+import PathBar from '../../components/PathBar'
 //Util
 import { getAlbum } from '../../Utils/parser'
 //Redux
 import { connect } from 'react-redux';
+//Utils
+import { getAlbumViewPahts } from '../../Utils/paths'
 
 export class AlbumView extends Component {
 
@@ -29,16 +30,15 @@ export class AlbumView extends Component {
                         onlyInfo={true}
                     />
 
-                    <div className="pathNav">
-                        <Link to="/home/">Home</Link> -> 
-                        <Link to={"/search/" + this.state.album.artist}>Artist</Link> -> 
-                        <Link to={"/artist/" + this.state.album.artistId}>{this.state.album.artist}</Link> -> 
-                        <Link to={"/album/" + this.state.album.id}>{this.state.album.name}</Link>
-                    </div>
+                    <PathBar
+                        pathlist={getAlbumViewPahts(this.props.artistSearchKey, this.state.album.artistId, this.state.album.artist, this.state.album.id, this.state.album.name)}
+                    />
 
                     <ListSongsAlbum
                         album={this.state.album}
                     />
+
+                    
                 </article>
             )
         }else{
@@ -60,7 +60,8 @@ export class AlbumView extends Component {
 
 const mapStateToProps = state => {
     return {
-        config: state.config
+        config: state.config,
+        artistSearchKey: state.artistSearchKey,
     };
 }
 const mapDispatchToProps = dispatch => {

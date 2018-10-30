@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 //CSS
 import './ArtistView.css'
 //Components
 import Artist from '../../components/Artist'
 import ListAlbums from '../../components/ListAlbums'
+import PathBar from '../../components/PathBar'
 //Util
 import { getArtist } from '../../Utils/parser'
 //Redux
 import { connect } from 'react-redux';
+//Utils
+import { getArtistViewPahts } from '../../Utils/paths'
 
 export class ArtistView extends Component {
 
     constructor(props){
         super(props)
         this.state = {
+            idartist: null,
             artist: null,
         }
     }
@@ -29,15 +31,14 @@ export class ArtistView extends Component {
                         onlyInfo={true}
                     />
 
-                    <div className="pathNav">
-                        <Link to="/home/">Home</Link> -> 
-                        <Link to={"/search/" + this.state.artist.name}>Artist</Link> ->
-                        <Link to={"/artist/" + this.state.artist.id}>{this.state.artist.name}</Link>  
-                    </div>
+                    <PathBar
+                        pathlist={getArtistViewPahts(this.props.artistSearchKey, this.state.artist.id, this.state.artist.name)}
+                    />
                    
                     <ListAlbums
                         albums={this.state.artist.albums}
                     />
+                    
                 </article>
             )
         }else{
@@ -46,21 +47,26 @@ export class ArtistView extends Component {
             )
         }
     }
+
     
     componentDidMount(){
         this.props.showSearchInHeader(true);
         getArtist(this.props.match.params.idartist, this.props.config)
             .then(
-                (data) => {this.setState({artist: data})}
+                (data) => {this.setState({
+                    artist: data
+                })}
                 )
             .catch(error => console.error(error)) 
+        
     }
 }
 
 
 const mapStateToProps = state => {
     return {
-        config: state.config
+        config: state.config,
+        artistSearchKey: state.artistSearchKey,
     };
 }
 

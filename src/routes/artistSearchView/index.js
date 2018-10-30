@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
 //CSS
 import './ArtistSearchView.css'
 //Components
 import SearchField from '../../components/SearchField'
 import ListArtists from '../../components/ListArtists'
+import PathBar from '../../components/PathBar'
 //Redux
 import { connect } from 'react-redux';
+//Utils
+import { getArtistSearchViewPahts } from '../../Utils/paths'
 
 
 export class ArtistSearchView extends Component {
@@ -17,7 +18,7 @@ export class ArtistSearchView extends Component {
             <article className="artistSearchView">
                 <div className="infoArtistSearchView">
                     <h2>Artists</h2>
-                    <h3>You are currently searching: "{this.props.match.params.searchkey}"</h3>
+                    <h3>You are currently searching: "{this.props.artistSearchKey}"</h3>
                 </div>
                 
                 <SearchField
@@ -25,35 +26,43 @@ export class ArtistSearchView extends Component {
                     className="vertical-center horizontal-center"
                 />
                 
-                <div className="pathNav">
-                    <Link to="/home/">Home</Link> -> 
-                    <Link to={"/search/" + this.props.match.params.searchkey}>Artist</Link>
-                </div>
+                <PathBar
+                    pathlist={getArtistSearchViewPahts(this.props.artistSearchKey)}
+                />
 
                 <ListArtists 
-                    artistKeySearch={this.props.match.params.searchkey}
                     config={this.props.config}
                 />
+                
             </article>
         )
     }
 
-    componentDidMount(){
+    componentWillMount(){
+        this.props.setArtistSearchKey(this.props.match.params.searchkey);
         this.props.showSearchInHeader(false);
     }
 }
 
 const mapStateToProps = state => {
     return {
-        config: state.config
+        config: state.config,
+        artistSearchKey: state.artistSearchKey
     };
 }
 const mapDispatchToProps = dispatch => {
     return{
-        showSearchInHeader(showSearchInHeader){
+        showSearchInHeader: (showSearchInHeader) => {
             const action = {
                 type: "SHOW_SEARCH_IN_HEADER",
                 showSearchInHeader
+            }
+            dispatch(action);
+        },
+        setArtistSearchKey: (artistSearchKey) => {
+            const action = {
+                type: "SET_ARTISTS_SEARCH_KEY",
+                artistSearchKey
             }
             dispatch(action);
         },
