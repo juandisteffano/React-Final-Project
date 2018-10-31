@@ -25,11 +25,13 @@ export default class ArtistModel {
     get genres(){
         let res = "";
         this._genres.forEach((element, index) => {
-            if(element.length < 10 && !res.includes(element)){
-                if(index < this._genres.length)
-                    res += element + " - "
-                res += element;
-            }
+           // if(element.length < 20 && !res.includes(element)){
+                if(index < this._genres.length-1)
+                    res += capitalizeFirstLetter(element) + " - "
+                else{
+                    res += element;
+                }
+            //}
         });
         return res;
     }
@@ -56,4 +58,8 @@ export default class ArtistModel {
     addAlbum(album){
         this._albums.push(album);
     }
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }

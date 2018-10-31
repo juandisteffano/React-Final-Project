@@ -5,6 +5,7 @@ import './AlbumView.css'
 import Album from '../../components/Album'
 import ListSongsAlbum from '../../components/ListSongsAlbum'
 import PathBar from '../../components/PathBar'
+import LoadingBar from '../../components/LoadingBar'
 //Util
 import { getAlbum } from '../../Utils/parser'
 //Redux
@@ -43,7 +44,7 @@ export class AlbumView extends Component {
             )
         }else{
             return (
-                <p>Error: Incorrect Album ID</p>
+                <LoadingBar />
             )
         }
     }

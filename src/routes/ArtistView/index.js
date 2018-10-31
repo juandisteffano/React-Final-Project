@@ -5,6 +5,7 @@ import './ArtistView.css'
 import Artist from '../../components/Artist'
 import ListAlbums from '../../components/ListAlbums'
 import PathBar from '../../components/PathBar'
+import LoadingBar from '../../components/LoadingBar'
 //Util
 import { getArtist } from '../../Utils/parser'
 //Redux
@@ -43,7 +44,7 @@ export class ArtistView extends Component {
             )
         }else{
             return (
-                <p>Error: Incorrect Artist ID</p>
+                <LoadingBar />
             )
         }
     }

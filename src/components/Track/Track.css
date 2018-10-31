@@ -38,6 +38,9 @@
 .albumTrackName {
     font-size: 0.75rem;
     clear: both;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
 
 .iconStarSelected{

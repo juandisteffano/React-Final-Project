@@ -34,8 +34,7 @@
 @media screen and (max-width: 541px){
     .buttonSort{
         padding: 2px 6px;
-        font-size: 0.75rem;
-        display: block;
+        display: left;
         border-radius: 5px !important;
         margin: 1%;
     }

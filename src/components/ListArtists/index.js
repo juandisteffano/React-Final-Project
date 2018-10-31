@@ -27,7 +27,7 @@ export class ListArtist extends Component {
         return(
             <ListElements
                 elements={artists}
-                msj="No Results Found"
+                msj="Searching..."
             />
         )
     }

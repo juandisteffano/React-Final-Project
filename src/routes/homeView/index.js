@@ -29,7 +29,7 @@ export class HomeView extends Component {
                     className="vertical-center horizontal-center" 
                 />
                 <div className="titleFS">
-                    <h2>Favorite Songs</h2>
+                    <h2 className="titleFS">Favorite Songs</h2>
                     <ButtonsBar />
                 </div>
                 
