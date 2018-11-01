@@ -35,7 +35,7 @@
 }
 
   /*Mobile*/
-@media screen and (max-width: 541px){
+@media screen and (max-width: 492px){
     .buttonClean{
         padding: 2px 6px;
         border-radius: 5px !important;

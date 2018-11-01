@@ -31,7 +31,7 @@
   }
 
   /*Mobile*/
-@media screen and (max-width: 541px){
+@media screen and (max-width: 492px){
     .buttonSort{
         padding: 2px 6px;
         display: left;

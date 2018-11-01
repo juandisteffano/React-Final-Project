@@ -8,14 +8,13 @@ import ArtistView from './artistView';
 import AlbumView from './albumView';
 
 //Components
-import Header from '../components/Header'
 import Footer from '../components/Footer'
+import HeaderAll from '../components/headerAll'
 
 const getRoutes = function() {
     return (
         <div>
-            <Header />
-
+            <HeaderAll />
             
             <Switch>
                 <Route exact path="/" component={() => window.location = 'http://localhost:8888'} />

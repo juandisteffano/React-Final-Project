@@ -76,7 +76,7 @@
 }
 
 /*Mobile*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 492px){
     .album{
         display: block;
         width: 100%;

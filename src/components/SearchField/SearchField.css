@@ -36,6 +36,13 @@
     background: transparent;
 }
 
+.searchBarMobile{
+    display: block;
+    float: none;
+    width: 100% ;
+    margin-bottom: 5%;
+}
+
 @keyframes slider {
     from {height: 0;
         font-size: 0}
@@ -46,4 +53,19 @@
 .slide {
     animation-name: slider;
     animation-duration: 1s;
+}
+
+@media screen and (min-width: 493px){
+    .search-field.searchBarMobile{
+        display: none;
+    }
+}
+/*Mobile*/
+@media screen and (max-width: 492px){
+    .search-field {
+        display: none;
+    }
+    .search-field.searchBarMobile{
+        display: block;
+    }
 }

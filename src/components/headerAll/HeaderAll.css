@@ -1,0 +1,52 @@
+.header {
+    box-sizing: border-box;
+    float: none;
+    width: 100%;
+    margin-bottom: 4%;
+    padding: 1%;
+}
+
+.iconSearchMobile{
+    display: none;
+    height: 20px;
+    width: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+
+.header.center{
+    text-align: center;
+}
+
+
+arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    position: absolute;
+    top: 30px;
+    right: 25px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+
+
+/*Mobile*/
+@media screen and (max-width: 492px){
+    .iconSearchMobile{
+        display: inline;
+    }
+}

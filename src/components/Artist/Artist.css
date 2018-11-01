@@ -72,11 +72,14 @@
 
 .genereArtist{
     font-size: 1rem;
-    margin-left: 5%
+    margin-left: 5%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
 }
 
 /*Mobile*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 492px){
     .artist{
         display: block;
         width: 100%;
