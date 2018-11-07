@@ -1,0 +1,87 @@
+.artist{
+    box-sizing: border-box;
+    float: left;
+    padding: 1%;
+    width: 48%;
+    margin: 1%;
+    border: 1px solid black;
+    height: 120px;
+    background-color: beige;
+    box-shadow: inset 1px 1px 50px #000;
+    color: black;
+}
+
+.artist:visited{
+    color: black;
+}
+
+.artistOnlyInfo{
+    box-sizing: border-box;
+    display: block;
+    padding: 1%;
+    width: auto;
+    margin-bottom: 1%;
+    border: 1px solid black;
+    height: 200px;
+    background-color: rgba(186, 206, 190, 0.473);
+    box-shadow: inset 1px 1px 50px #000;
+}
+
+.artist:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+.imgArtist{
+    box-sizing: border-box;
+    float: left;
+    width: 30%;
+    max-width: 110px;
+}
+
+.imgArtistInfo{
+    box-sizing: border-box;
+    float: left;
+    width: 30%;
+    max-width: 190px;
+}
+
+.infoArtist{
+    box-sizing: border-box;
+    float: right;
+    width: 70%;
+
+}
+
+.nameArtist,
+.nameArtistOnlyInfo{
+    font-weight: bold;
+    margin-left: 5%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.nameArtist{
+    font-size: 1.1rem;
+
+}
+
+.nameArtistOnlyInfo{
+    font-size: 1.5rem;
+}
+
+.genereArtist{
+    font-size: 1rem;
+    margin-left: 5%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+/*Mobile*/
+@media screen and (max-width: 492px){
+    .artist{
+        display: block;
+        width: 100%;
+    }
+}

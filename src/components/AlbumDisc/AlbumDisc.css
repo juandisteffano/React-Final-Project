@@ -1,0 +1,25 @@
+.albumDisc{
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+    overflow: auto;
+    padding: 0% 10%;
+}
+
+.tracksList{
+    display: block;
+    width:auto;
+}
+
+.albumDiscTitle{
+    background-color: rgba(179, 171, 171, 0.726);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}

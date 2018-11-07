@@ -1,0 +1,71 @@
+.search-field{
+    float: right;
+    box-sizing: border-box;
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 9999em;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+    width: 30%;
+    height: 2.2rem;
+    transform: translateY(50%);
+    margin-bottom: 2%;
+    overflow: auto;
+}
+
+.search-field .icon { 
+    position: relative;
+    box-sizing: border-box;
+    width: 10%;
+    float: left;
+    max-width: 50px;
+    background-image: url('../../assets/magnifyingGlass.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: 40% 40%;
+    height: 100%;
+  }
+
+.search-field .input-field{
+    position: relative;
+    box-sizing: border-box;
+    width: 90%;
+    float: none;
+    height: 90%;
+    border: none;
+    background: transparent;
+}
+
+.searchBarMobile{
+    display: block;
+    float: none;
+    width: 100% ;
+    margin-bottom: 5%;
+}
+
+@keyframes slider {
+    from {height: 0;
+        font-size: 0}
+    to {height: 35px;
+        font-size: 1rem}
+}
+
+.slide {
+    animation-name: slider;
+    animation-duration: 1s;
+}
+
+@media screen and (min-width: 493px){
+    .search-field.searchBarMobile{
+        display: none;
+    }
+}
+/*Mobile*/
+@media screen and (max-width: 492px){
+    .search-field {
+        display: none;
+    }
+    .search-field.searchBarMobile{
+        display: block;
+    }
+}

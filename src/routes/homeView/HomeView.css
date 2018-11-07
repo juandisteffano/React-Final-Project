@@ -1,0 +1,39 @@
+.home-view {
+    display: block;
+    width: auto;
+    padding: 0% 10%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.home-view .search-field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 40px;
+    float: none;
+}
+
+h2 {
+    float: left;
+    margin-left: 5%;
+    width: 40%;
+}
+
+.titleFS{
+    display: block;
+    width: auto;
+    margin-bottom: 2%;
+}
+
+
+ /*Mobile*/
+ @media screen and (max-width: 541px){
+    h2.titleFS {
+        margin-left: 0;
+        margin-bottom: 1%;
+        width: 100%;
+        text-align: center;
+    }
+}

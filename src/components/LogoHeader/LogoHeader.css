@@ -1,0 +1,19 @@
+.logo-header{
+    height: 60px;
+    width: 60px;
+    box-sizing: border-box;
+}
+
+.ref{
+    float: left;
+    width: 60px;
+}
+
+
+/*Mobile*/
+@media screen and (max-width: 492px){
+    .logo-header{
+        height: 30px !important;
+        width: 30px !important;
+    }
+}

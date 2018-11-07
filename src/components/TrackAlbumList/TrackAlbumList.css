@@ -1,0 +1,26 @@
+.trackAlbumList{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow: auto;
+}
+
+.titleTrackAlbumList{
+    box-sizing: border-box;
+    font-size: 1rem;
+    float: left;
+    margin-left: 2%;
+    width: 60%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.trackAlbumList:nth-child(odd) {
+    background: #CCC
+}
+
+.trackAlbumList:nth-child(even) {
+    background: #FFF
+}

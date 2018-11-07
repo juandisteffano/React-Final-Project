@@ -1,0 +1,8 @@
+.listSongsAlbum{
+    box-sizing: border-box;
+    display: block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}

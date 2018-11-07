@@ -1,0 +1,8 @@
+.albumView {
+    display: block;
+    width: auto;
+    padding: 0% 10%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}

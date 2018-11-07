@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    text-align: center;
+    background-color: rgba(197, 214, 191, 0.356);
 }
 
 ul {
@@ -14,3 +14,21 @@ li {
     display: inline-block;
     margin: 0 10px;
 }
+
+html{
+    font-size: 16px;
+}
+
+
+.horizontal-center{   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%)
+}
+

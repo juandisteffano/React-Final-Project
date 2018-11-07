@@ -1,0 +1,8 @@
+.loadingImg{
+    display: block;
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+}

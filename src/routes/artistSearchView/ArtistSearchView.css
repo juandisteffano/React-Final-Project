@@ -1,0 +1,26 @@
+.artistSearchView {
+    display: block;
+    width: auto;
+    padding: 0% 10%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+.artistSearchView .search-field {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.infoArtistSearchView {
+    display: block;
+    margin-bottom: 2%;
+    width: auto;
+}
+
+.artistSearchView h2 {
+    float: none;
+    margin-left: 0%;
+}

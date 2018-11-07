@@ -1,0 +1,19 @@
+.buttonsBar{
+    display: block;
+    float: right;
+    width: 50%;
+    transform: translateY(50%);
+    overflow: auto;
+}
+ 
+
+  /*Mobile*/
+  @media screen and (max-width: 492px){
+    .buttonsBar{
+        float: none;
+        clear: both;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8%;
+    }
+}

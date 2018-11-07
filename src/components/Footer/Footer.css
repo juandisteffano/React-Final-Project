@@ -1,0 +1,11 @@
+.footer{
+    display: block;
+    width: auto;
+    height: 2rem;
+    padding: 2%;
+}
+
+.footer p{
+    font-size: 1rem;
+    float: right;
+}
